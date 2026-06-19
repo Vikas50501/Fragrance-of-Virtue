@@ -1,0 +1,576 @@
+{% style %}
+  #shopify-section-{{ section.id }}{
+    display: none;
+  }
+   .Sticky-img-wrapper  {
+   animation: up-down linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: up-down linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: up-down linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: up-down linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: up-down linear 4s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+} 
+@keyframes up-down{
+  0% {
+    transform:  translate(1px,20px)  ;
+  }
+  24% {
+    transform:  translate(1px,30px)  ;
+  }
+  50% {
+    transform:  translate(1px,12px)  ;
+  }
+  74% {
+    transform:  translate(1px,22px)  ;
+  }
+  100% {
+    transform:  translate(1px,22px)  ;
+  }
+}
+
+@-moz-keyframes up-down{
+  0% {
+    -moz-transform:  translate(1px,20px)  ;
+  }
+  24% {
+    -moz-transform:  translate(1px,30px)  ;
+  }
+  50% {
+    -moz-transform:  translate(1px,12px)  ;
+  }
+  74% {
+    -moz-transform:  translate(1px,22px)  ;
+  }
+  100% {
+    -moz-transform:  translate(1px,22px)  ;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    -webkit-transform:  translate(1px,20px)  ;
+  }
+  24% {
+    -webkit-transform:  translate(1px,30px)  ;
+  }
+  50% {
+    -webkit-transform:  translate(1px,12px)  ;
+  }
+  74% {
+    -webkit-transform:  translate(1px,22px)  ;
+  }
+  100% {
+    -webkit-transform:  translate(1px,22px)  ;
+  }
+}
+
+@-o-keyframes up-down {
+  0% {
+    -o-transform:  translate(1px,20px)  ;
+  }
+  24% {
+    -o-transform:  translate(1px,30px)  ;
+  }
+  50% {
+    -o-transform:  translate(1px,12px)  ;
+  }
+  74% {
+    -o-transform:  translate(1px,22px)  ;
+  }
+  100% {
+    -o-transform:  translate(1px,22px)  ;
+  }
+}
+
+@-ms-keyframes up-down {
+  0% {
+    -ms-transform:  translate(1px,20px)  ;
+  }
+  24% {
+    -ms-transform:  translate(1px,30px)  ;
+  }
+  50% {
+    -ms-transform:  translate(1px,12px)  ;
+  }
+  74% {
+    -ms-transform:  translate(1px,22px)  ;
+  }
+  100% {
+    -ms-transform:  translate(1px,22px)  ;
+  }
+}
+
+{% if section.settings.only_homepage and template == 'index' %}
+  #shopify-section-{{ section.id }}{
+    display: block;
+  }
+{% endif %}
+
+{% if template.name == 'page' and page.handle == 'genie-picks' %}
+ #shopify-section-{{ section.id }}{
+    display: block;
+  }
+{% endif %}
+
+{% if section.settings.only_homepage == false %}
+  #shopify-section-{{ section.id }}{
+    display: block;
+  }
+{% endif %}
+
+  .Sticky-img-wrapper {
+    position: fixed;
+    bottom:0;
+    left: {{ section.settings.left_position }}%;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    z-index: 998;
+       transition: opacity 0.6s ease-in-out;
+    opacity: 1;
+  }
+  .Sticky-img-wrapper .sticky__image{
+    width: {{ section.settings.icon_width }}px;
+  }
+
+  .sticky_content_wrapper {
+    display: flex;
+    align-items: center;
+    position:relative;
+  }
+  .sticky_text{
+    position: absolute;
+    display: inline-block;
+    font-size: 0.8rem;
+    /* height: 0.5rem; */
+    line-height: 0.8rem;
+    vertical-align: bottom;
+    /* overflow: hidden; */
+    color: #000000;
+    top: 25px;
+    right: 28px;
+    width: 100px;
+  }
+  @media(max-width:768px){
+    .sticky_text{
+      position: absolute;
+      top:20px;
+      right:18px;
+      width:85px;
+    }
+  }
+  /* .sticky_text span {
+			display: block;
+      animation-name: change;
+      animation-duration: 12.42s;
+      animation-iteration-count: infinite;
+		} */
+
+
+{% if section.settings.only_homepage and template == 'index' %}
+  .footer{
+    --footer-sticky-padding: {{ section.settings.icon_width }}px;
+    padding-block-end: calc(var(--footer-padding-block) + var(--footer-sticky-padding));
+  }
+{% endif %}
+{% if section.settings.only_homepage == false %}
+  .footer{
+    --footer-sticky-padding: {{ section.settings.icon_width }}px;
+    padding-block-end: calc(var(--footer-padding-block) + var(--footer-sticky-padding));
+  }
+{% endif %}
+
+/* @keyframes change {
+  0%, 100%  {transform:translate3d(0,0,0);}
+  9.5%  {transform:translate3d(0,0,0);}
+  12.5%  {transform:translate3d(0,-50px,0);}
+  22%  {transform:translate3d(0,-50px,0);}
+  25%  {transform:translate3d(0,-100px,0);}
+  34.5%  {transform:translate3d(0,-100px,0);}
+  37.5%  {transform:translate3d(0,-150px,0);}
+  47%  {transform:translate3d(0,-150px,0);}
+  50%  {transform:translate3d(0,-200px,0);}
+  59.5%  {transform:translate3d(0,-200px,0);}
+  62.5%  {transform:translate3d(0,-150px,0);}
+  72%  {transform:translate3d(0,-150px,0);}
+  75%  {transform:translate3d(0,-100px,0);}
+  84.5%  {transform:translate3d(0,-100px,0);}
+  87.5%  {transform:translate3d(0,-50px,0);}
+  97%  {transform:translate3d(0,-50px,0);}
+} */
+  .Sticky-img-wrapper {
+      bottom: 30px;
+    }
+
+  @media screen and (max-width: 699px) {
+    .Sticky-img-wrapper {
+      bottom: 70px;
+    }
+      .Sticky-img-wrapper .sticky__image{
+       width: {{ section.settings.mobile_icon_width | divided_by: 1.15 | round }}px !important;
+      }
+  }
+{% endstyle %}
+{% capture sticky_data %}
+          <div class="sticky_content_wrapper">
+            <div class="sticky__image">
+              {%- if section.settings.sticky_img != blank -%}
+              {{- section.settings.sticky_img | image_url: width: section.setting.sticky_img.width | image_tag -}}
+              {% endif %}
+              {%- if section.settings.video != blank -%}
+                 
+                    {{ section.settings.video | video_tag: playsinline: true, muted: true, autoplay: true, controls: section.settings.show_controls, loop: true, preload: 'metadata'}}
+                 
+                {% endif %}
+            </div>
+            {% comment %} {% if section.settings.content_1 != blank or section.settings.content_2 != blank or section.settings.content_3 != blank %} {% endcomment %}
+            <div class="sticky_text">
+              {% comment %} {% if section.settings.content_1 != blank %}
+                <span>{{ section.settings.content_1 }}</span>
+              {% endif %}
+              {% if section.settings.content_2 != blank %}
+                <span>{{ section.settings.content_2 }}</span>
+              {% endif %}
+              {% if section.settings.content_3 != blank %}
+                <span>{{ section.settings.content_3 }}</span>
+              {% endif %}
+              {% if section.settings.content_1 != blank %}
+                <span>{{ section.settings.content_1 }}</span>
+              {% endif %}
+              {% if section.settings.content_2 != blank %}
+                <span>{{ section.settings.content_2 }}</span>
+              {% endif %}
+              {% if section.settings.content_3 != blank %}
+                <span>{{ section.settings.content_3 }}</span>
+              {% endif %} {% endcomment %}
+               <span class="ityped"></span>
+            </div>
+            {% comment %} {% endif %} {% endcomment %}
+          </div>
+  {% endcapture %}
+
+{% if section.settings.sticky_img  or section.settings.video %}
+    <div class="Sticky-img-wrapper">
+      {%  if section.settings.url != blank %}
+        <a href="{{ section.settings.url }}" class="sticky-link" target="_blank">
+          {{ sticky_data }}
+        </a>
+      {% else %}
+        {{ sticky_data }}
+      {% endif %}
+    </div>
+{% endif %}
+
+<script src="https://unpkg.com/ityped@0.0.10"></script>
+      <script>
+            window.ityped.init(document.querySelector('.ityped'),{
+                strings: ['Want to manifest your wish?','Pick a Tarot card for fragrance! ','Need incense for better sleep?','Your zodiac incense is waiting!','Need a Gift Box for a occasion? '],
+                loop: true
+            })
+        </script>
+{% comment %} 
+         <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sticky = document.querySelector('.Sticky-img-wrapper');
+  const sound = new Audio('https://cdn.shopify.com/s/files/1/0712/0194/7840/files/Sparkling_Chime_Sound_-_Meinl_Sonic_Energy.mp3?v=1764593601');
+  if (!sticky) return;
+
+  function moveSticky() {
+    sticky.style.opacity = 0; // fade-out
+   
+    setTimeout(() => {
+      const maxX = window.innerWidth - sticky.offsetWidth;
+      const maxY = window.innerHeight - sticky.offsetHeight;
+
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+
+      sticky.style.left = `${newX}px`;
+      sticky.style.top = `${newY}px`;
+
+      sticky.style.opacity = 1; // fade-in again
+      sound.currentTime = 0;
+      sound.play(); 
+    }, 3000);
+  }
+
+  moveSticky(); // initial random place
+  setInterval(moveSticky, 10000); // repeat every 10 seconds
+});
+</script> {% endcomment %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const sticky = document.querySelector('.Sticky-img-wrapper');
+  const sound = new Audio('https://cdn.shopify.com/s/files/1/0712/0194/7840/files/Sparkling_Chime_Sound_-_Meinl_Sonic_Energy.mp3?v=1764593601');
+
+  if (!sticky) return;
+
+  // Play sound ONLY ONCE
+  setTimeout(() => {
+    sound.currentTime = 0;
+      sound.play(); 
+     }, 3000);
+
+});
+
+</script>
+{% schema %}
+{
+  "name": "Sticky Image",
+  "class": "shopify-section--sticky-image",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["custom.overlay"]
+  },
+  "settings": [
+    {
+        "type": "range",
+        "id": "left_position",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "step": 1,
+        "label": "Left Position",
+        "default": 10
+    },
+    {
+        "type": "range",
+        "id": "icon_width",
+        "min": 10,
+        "max": 400,
+        "unit": "px",
+        "step": 10,
+        "label": "Image Size",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mobile_icon_width",
+        "min": 210,
+        "max": 400,
+        "unit": "px",
+        "step": 10,
+        "label": "Mobile Image Size",
+        "default": 210
+    },
+    {
+        "type": "image_picker",
+        "id": "sticky_img",
+        "label": "Sticky Image"
+    },
+    {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Video are muted automatically and will autoplay."
+    },
+    {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "Show video controls",
+          "default": false,
+          "visible_if": "{{ section.settings.video != blank }}"
+        },
+         
+    {
+      "type": "text",
+      "id": "content_1",
+      "label": "Content 1"
+    },
+    {
+      "type": "text",
+      "id": "content_2",
+      "label": "Content 2"
+    },
+    {
+      "type": "text",
+      "id": "content_3",
+      "label": "Content 3"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "only_homepage",
+      "label": "Show Only Homepage"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    }
+  ],
+  "presets": [
+    {
+       "name": "Sticky Image"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% comment %} {% style %}
+  {% if section.settings.only_homepage and request.page_type == 'index' %}
+    #shopify-section-{{ section.id }} {
+      display: block;
+    }
+
+    .footer {
+      --footer-sticky-padding: {{ section.settings.icon_width }}px;
+      padding-block-end: calc(var(--footer-padding-block) + var(--footer-sticky-padding));
+    }
+  {% endif %}
+
+/* Floating Sticky Image / Video */
+.sticky-float-img,
+.sticky-float-video {
+  position: fixed;
+  width: {{ section.settings.icon_width }}px;
+  z-index: 998;
+  pointer-events: auto;
+  cursor: pointer;
+}
+{% endstyle %}
+
+{% if section.settings.only_homepage and request.page_type == 'index' %}
+  {% capture sticky_data %}
+    {% if section.settings.sticky_img %}
+      <img class="sticky-float-img" src="{{ section.settings.sticky_img | image_url }}" alt="Sticky Image">
+    {% endif %}
+
+    {% if section.settings.video %}
+      {{ section.settings.video | video_tag: playsinline: true, muted: true, autoplay: true, controls: section.settings.show_controls, loop: true, preload: 'metadata', class: 'sticky-float-video' }}
+    {% endif %}
+  {% endcapture %}
+
+  {% if section.settings.sticky_img or section.settings.video %}
+    {% if section.settings.url != blank %}
+      <a href="{{ section.settings.url }}" target="_blank">
+        {{ sticky_data }}
+      </a>
+    {% else %}
+      {{ sticky_data }}
+    {% endif %}
+  {% endif %}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const img = document.querySelector('.sticky-float-img') || document.querySelector('.sticky-float-video');
+    if (!img) return;
+
+    // Random initial position
+    let x = Math.random() * (window.innerWidth - img.offsetWidth);
+    let y = Math.random() * (window.innerHeight - img.offsetHeight);
+
+    // Slower speed (0.5px to 1.5px per frame)
+    let dx = (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random());
+    let dy = (Math.random() < 0.5 ? -1 : 1) * (0.5 + Math.random());
+
+    let isPaused = false;
+
+    img.style.left = x + 'px';
+    img.style.top = y + 'px';
+
+    img.addEventListener('mouseenter', () => isPaused = true);
+    img.addEventListener('mouseleave', () => isPaused = false);
+
+    function move() {
+      if (!isPaused) {
+        x += dx;
+        y += dy;
+
+        // Bounce off edges
+        if (x <= 0 || x + img.offsetWidth >= window.innerWidth) {
+          dx = -dx;
+          x = Math.max(0, Math.min(x, window.innerWidth - img.offsetWidth));
+        }
+        if (y <= 0 || y + img.offsetHeight >= window.innerHeight) {
+          dy = -dy;
+          y = Math.max(0, Math.min(y, window.innerHeight - img.offsetHeight));
+        }
+
+        img.style.left = x + 'px';
+        img.style.top = y + 'px';
+      }
+
+      requestAnimationFrame(move);
+    }
+
+    move();
+
+    window.addEventListener('resize', () => {
+      x = Math.min(x, window.innerWidth - img.offsetWidth);
+      y = Math.min(y, window.innerHeight - img.offsetHeight);
+    });
+  });
+  </script>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Bouncing Sticky image",
+  "class": "shopify-section--random-bouncing-sticky",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "icon_width",
+      "min": 10,
+      "max": 400,
+      "unit": "px",
+      "step": 10,
+      "label": "Icon width",
+      "default": 50
+    },
+    {
+      "type": "image_picker",
+      "id": "sticky_img",
+      "label": "Sticky Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Videos are muted automatically and autoplay."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show video controls",
+      "default": false,
+      "visible_if": "{{ section.settings.video != blank }}"
+    },
+     {
+      "type": "checkbox",
+      "id": "only_homepage",
+      "label": "Show Only Homepage"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+       "name": "Random Bouncing Sticky Image/Video"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}

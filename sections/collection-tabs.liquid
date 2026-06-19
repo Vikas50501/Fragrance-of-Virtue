@@ -1,0 +1,737 @@
+{%- if section.blocks.size > 0 -%}
+  {%- render 'section-spacing-collapsing' -%}
+
+  <style>
+  {%- assign section_background = section.settings.background | default: settings.background -%}
+  {%- assign card_background = section.settings.product_card_background | default: settings.product_card_background -%}
+  {%- assign card_blends = false -%}
+
+  {%- unless section_background != 'rgba(0,0,0,0)' and card_background != 'rgba(0,0,0,0)' and section_background != card_background -%}
+    {%- assign card_blends = true -%}
+  {%- endunless -%}
+
+    @media screen and (min-width: 700px) {
+      #shopify-section-{{ section.id }} {
+        --tabs-max-width: {% if section.settings.content_size == 'small' %}760{% elsif section.settings.content_size == 'medium' %}1000{% elsif section.settings.content_size == 'large' %}1260{% endif %}px;
+        --section-stack-spacing-block: var(--spacing-8);
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      #shopify-section-{{ section.id }} {
+        --section-stack-spacing-block: var(--spacing-10);
+      }
+    }
+    #shopify-section-{{ section.id }} .product-list {
+        --product-list-gap: {% if section.settings.stack_products and section.settings.products_per_row_mobile == '2' %}{% if card_blends %}var(--product-list-row-gap){% endif %} var(--spacing-2){% else %}var(--product-list-row-gap) var(--product-list-column-gap){% endif %};
+        --product-list-items-per-row: {{ section.settings.products_per_row_mobile | times: 1 }};
+        --product-list-carousel-item-width: 74vw;
+        --product-list-grid: {% if section.settings.stack_products %}auto / repeat(var(--product-list-items-per-row), minmax(0, 1fr)){% else %}auto / auto-flow var(--product-list-carousel-item-width){% endif %};
+    }
+
+    @media screen and (min-width: 700px) {
+        #shopify-section-{{ section.id }} .product-list {
+        --product-list-gap: var(--product-list-row-gap) var(--product-list-column-gap);
+        --product-list-items-per-row: 2;
+        --product-list-carousel-item-width: 36vw;
+        }
+        #shopify-section-{{ section.id }} .tabs-inner::part(tab-list) {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        #shopify-section-{{ section.id }} .product-list {
+        --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
+        --product-list-carousel-item-width: calc(var(--container-inner-width) / {{ section.settings.products_per_row_desktop }} - (var(--product-list-column-gap) / {{ section.settings.products_per_row_desktop }} * {{ section.settings.products_per_row_desktop | minus: 1 }}));
+        }
+    }
+  </style>
+
+  <div {% render 'section-properties' %}>
+    <div class="tabs">
+      <div class="section-stack">
+        {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+          <div class="prose text-center">
+            {%- if section.settings.subheading != blank -%}
+              <p class="subheading">{{ section.settings.subheading | escape }}</p>
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+              <p class="h2">{%- render 'styled-text', content: section.settings.title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div class="tabs-container">
+          <x-tabs class="tabs-inner sm:text-{{ section.settings.text_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}">
+            <template shadowrootmode="open">
+              <slot role="tablist" part="tab-list" name="title"></slot>
+              <slot part="tab-panels" name="content"></slot>
+            </template>
+
+            {%- for block in section.blocks -%}
+              {%- assign icon = block.settings.custom_icon | default: block.settings.icon -%}
+              {% capture title_content %}
+                {%- if icon -%}
+                    <div class="text-with-icon">
+                    {% assign icon_width= block.settings.icon_width %}
+                    
+                        {%- if icon.src != blank -%}
+                            {% capture icon_sizes %}{{ icon_width | default: 20 }}px{%- endcapture -%}
+                            {% capture icon_widths %}{{ icon_width }},{{ icon_width | times: 2 }},{{ icon_width | times: 3 }}{%- endcapture -%}
+                            {% capture icon_style %}--image-max-width: {{ icon_sizes }}{%- endcapture -%}
+
+                            {{- icon | image_url: width: icon.width | image_tag: loading: 'lazy', sizes: icon_sizes, widths: icon_widths, style: icon_style -}}
+                        {%- else -%}
+                            {%- render 'icon' with icon, width: icon_width -%}
+                        {%- endif -%}
+                        <span>{{ block.settings.title | escape }}</span>
+                        </div>
+                    {% else %}
+                        <span>{{ block.settings.title | escape }}</span>
+                    {% endif %}
+                {% endcapture %}
+
+             {% capture content %}
+               {% case block.type %}
+                 {% when 'tab' %}
+                    <div class="prose">
+                   {{ block.settings.page.content | default: block.settings.content }}
+                   </div>
+                 {% when 'liquid' %}
+                    <div class="prose">
+                   {{ block.settings.liquid }}
+                   </div>
+                 {% when 'collection' %}
+                    <div class="{% if section.settings.show_progress_bar %}scrollable-with-controls{% else %}floating-controls-container{% endif %}">
+                    {%- assign scroll_area_id = 'scroll-area-' | append: section.id | append: block.id -%}
+
+                    <scroll-carousel selector="product-card" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.settings.products_count > section.settings.products_per_row_desktop %}is-scrollable{% endif %}">
+                        <reveal-items selector=".product-list > *">
+                        <product-list class="product-list">
+                            {%- assign products = block.settings.products | default: block.settings.collection.products -%}
+
+                            {%- for product in products limit: section.settings.products_count -%}
+                                {%- render 'product-card', product: product, stacked: section.settings.stack_products, position: forloop.index, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color, show_badges: true -%}
+                            {%- endfor -%}
+                        </product-list>
+                        </reveal-items>
+                    </scroll-carousel>
+
+                    {%- if section.settings.stack_products == false -%}
+                        {%- if section.settings.show_progress_bar -%}
+                        {%- assign default_progress = section.settings.products_per_row_desktop | times: 1.0 | divided_by: section.settings.products_count -%}
+                        {%- render 'scrollbar', observes: scroll_area_id, default_progress: default_progress, show_buttons: true -%}
+                        {%- else -%}
+                        <button is="prev-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}" disabled>
+                            <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+                            <span class="animated-arrow animated-arrow--reverse"></span>
+                        </button>
+
+                        <button is="next-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}">
+                            <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+                            <span class="animated-arrow"></span>
+                        </button>
+                        {%- endif -%}
+                    {%- endif -%}
+                    </div>
+               {% endcase %}
+             {% endcapture %}
+
+              {%- if title_content != blank and content != blank -%}
+                <button type="button" slot="title" class="tabs-nav__button bold text-subdued text-center" {{ block.shopify_attributes }}>{{ title_content }}</button>
+                <div role="tabpanel" class="tab-content" slot="content" {% cycle '', 'hidden', 'hidden', 'hidden', 'hidden' %}>
+                  {{ content }}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </x-tabs>
+
+
+            <div class="sm:hidden">
+            {%- for block in section.blocks -%}
+                {% assign title = block.settings.title %}
+                {%- assign icon = block.settings.custom_icon | default: block.settings.icon -%}
+             {% capture content %}
+               {% case block.type %}
+                 {% when 'tab' %}
+                    <div class="prose">
+                   {{ block.settings.page.content | default: block.settings.content }}
+                   </div>
+                 {% when 'liquid' %}
+                    <div class="prose">
+                   {{ block.settings.liquid }}
+                   </div>
+                 {% when 'collection' %}
+                    <div class="{% if section.settings.show_progress_bar %}scrollable-with-controls{% else %}floating-controls-container{% endif %}">
+                    {%- assign scroll_area_id = 'scroll-area-' | append: section.id | append: block.id -%}
+
+                    <scroll-carousel selector="product-card" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.settings.products_count > section.settings.products_per_row_desktop %}is-scrollable{% endif %}">
+                        <reveal-items selector=".product-list > *">
+                        <product-list class="product-list">
+                            {%- assign products = block.settings.products | default: block.settings.collection.products -%}
+
+                            {%- for product in products limit: section.settings.products_count -%}
+                                {%- render 'product-card', product: product, stacked: section.settings.stack_products, position: forloop.index, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color, show_badges: true -%}
+                            {%- endfor -%}
+                        </product-list>
+                        </reveal-items>
+                    </scroll-carousel>
+
+                    {%- if section.settings.stack_products == false -%}
+                        {%- if section.settings.show_progress_bar -%}
+                        {%- assign default_progress = section.settings.products_per_row_desktop | times: 1.0 | divided_by: section.settings.products_count -%}
+                        {%- render 'scrollbar', observes: scroll_area_id, default_progress: default_progress, show_buttons: true -%}
+                        {%- else -%}
+                        <button is="prev-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}" disabled>
+                            <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+                            <span class="animated-arrow animated-arrow--reverse"></span>
+                        </button>
+
+                        <button is="next-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}">
+                            <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+                            <span class="animated-arrow"></span>
+                        </button>
+                        {%- endif -%}
+                    {%- endif -%}
+                    </div>
+               {% endcase %}
+             {% endcapture %}
+
+              {%- if title and content -%}
+                {%- assign open = false -%}
+
+                {%- if forloop.first and section.settings.first_tab_open -%}
+                  {%- assign open = true -%}
+                {%- endif -%}
+
+                {%- render 'accordion', title: title, icon: icon, icon_width: block.settings.icon_width, content: content, open: open -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Collection Tabs",
+  "class": "shopify-section--tabs collection-tabs shopify-section--featured-collection",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "content_size",
+      "label": "Content size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fill page"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Desktop text alignment",
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "first_tab_open",
+      "label": "Open first tab on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_products",
+      "label": "Stack products",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_progress_bar",
+      "label": "Show carousel progress bar",
+      "default": false,
+      "visible_if": "{{ section.settings.stack_products == false }}"
+    },
+    {
+      "type": "range",
+      "id": "products_count",
+      "min": 2,
+      "max": 50,
+      "label": "Products to show",
+      "default": 6
+    },
+    {
+      "type": "select",
+      "id": "products_per_row_mobile",
+      "label": "Products per row (mobile)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_desktop",
+      "min": 2,
+      "max": 5,
+      "label": "Products per row (desktop)",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "color_background",
+      "id": "heading_gradient",
+      "label": "Heading gradient"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Rich-text content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tab"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page",
+          "info": "Replaces inline content if specified."
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tab"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "picto-coupon",
+              "label": "Coupon",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-percent",
+              "label": "Percent",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-gift",
+              "label": "Gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-star",
+              "label": "Star",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-like",
+              "label": "Like",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-building",
+              "label": "Building",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-love",
+              "label": "Love",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-award-gift",
+              "label": "Award gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-happy",
+              "label": "Happy",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-box",
+              "label": "Box",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-pin",
+              "label": "Pin",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-timer",
+              "label": "Timer",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-validation",
+              "label": "Validation",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-truck",
+              "label": "Truck",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-return",
+              "label": "Return",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-earth",
+              "label": "Earth",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-plane",
+              "label": "Plane",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-credit-card",
+              "label": "Credit card",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-lock",
+              "label": "Lock",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-shield",
+              "label": "Shield",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-secure-profile",
+              "label": "Secure profile",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-money",
+              "label": "Money",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-recycle",
+              "label": "Recycle",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-leaf",
+              "label": "Leaf",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-tree",
+              "label": "Tree",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-mobile-phone",
+              "label": "Mobile phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-phone",
+              "label": "Phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-chat",
+              "label": "Chat",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-customer-support",
+              "label": "Customer support",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-operator",
+              "label": "Operator",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-mailbox",
+              "label": "Mailbox",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-envelope",
+              "label": "Envelope",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-comment",
+              "label": "Comment",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-question",
+              "label": "Question",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-send",
+              "label": "Send",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-at-sign",
+              "label": "At sign",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-camera",
+              "label": "Camera",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-wifi",
+              "label": "WiFi",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-bluetooth",
+              "label": "Bluetooth",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-printer",
+              "label": "Printer",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-smart-watch",
+              "label": "Smart watch",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-coffee",
+              "label": "Coffee",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-burger",
+              "label": "Burger",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-beer",
+              "label": "Beer",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-target",
+              "label": "Target",
+              "group": "Other"
+            },
+            {
+              "value": "picto-document",
+              "label": "Document",
+              "group": "Other"
+            },
+            {
+              "value": "picto-jewelry",
+              "label": "Jewelry",
+              "group": "Other"
+            },
+            {
+              "value": "picto-music",
+              "label": "Music",
+              "group": "Other"
+            },
+            {
+              "value": "picto-file",
+              "label": "File",
+              "group": "Other"
+            },
+            {
+              "value": "picto-mask",
+              "label": "Mask",
+              "group": "Other"
+            },
+            {
+              "value": "picto-stop",
+              "label": "Stop",
+              "group": "Other"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon",
+          "info": "96 x 96px .png or .svg recommended"
+        },
+        {
+          "type": "range",
+          "id": "icon_width",
+          "min": 16,
+          "max": 48,
+          "step": 2,
+          "unit": "px",
+          "label": "Icon width",
+          "default": 20
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+            "type": "product_list",
+            "id": "products",
+            "label": "Products",
+            "info": "Replaces collection when selected."
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Liquid code",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tab"
+        },
+        {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "Liquid code",
+          "default": "<p>Write Liquid code to create advanced customizations.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tabs",
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "title": "Tab 1",
+            "content": "<p>Use this text to share information about your brand with your customers.</p>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "title": "Tab 2",
+            "content": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "title": "Tab 3",
+            "content": "<p>Share information about your shipping rates, return policy or contact information.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

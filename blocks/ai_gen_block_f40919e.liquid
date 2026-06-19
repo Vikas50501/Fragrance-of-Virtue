@@ -1,0 +1,336 @@
+{% doc %}
+  @prompt
+    The incense sticks are lit, releasing soft trails of dark gray smoke that curl gracefully upwards, creating a soothing atmosphere. position fixed on on site
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-incense-smoke-{{ ai_gen_id }} {
+    position: fixed;
+    top: {{ block.settings.vertical_position }}%;
+    left: {{ block.settings.horizontal_position }}%;
+    transform: translate(-50%, -50%);
+    z-index: {{ block.settings.z_index }};
+    pointer-events: none;
+    width: {{ block.settings.container_width }}px;
+    height: {{ block.settings.container_height }}px;
+  }
+
+  .ai-incense-stick-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: {{ block.settings.stick_width }}px;
+    height: {{ block.settings.stick_height }}px;
+    background: linear-gradient(to top, {{ block.settings.stick_color }}, {{ block.settings.stick_tip_color }});
+    border-radius: 2px;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: {{ block.settings.stick_height }}px;
+    left: 50%;
+    width: {{ block.settings.smoke_particle_size }}px;
+    height: {{ block.settings.smoke_particle_size }}px;
+    background-color: {{ block.settings.smoke_color }};
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(2) {
+    animation: ai-smoke-rise-{{ ai_gen_id }}-1 {{ block.settings.animation_speed }}s infinite ease-out;
+    animation-delay: 0s;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(3) {
+    animation: ai-smoke-rise-{{ ai_gen_id }}-2 {{ block.settings.animation_speed }}s infinite ease-out;
+    animation-delay: 0.5s;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(4) {
+    animation: ai-smoke-rise-{{ ai_gen_id }}-3 {{ block.settings.animation_speed }}s infinite ease-out;
+    animation-delay: 1s;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(5) {
+    animation: ai-smoke-rise-{{ ai_gen_id }}-4 {{ block.settings.animation_speed }}s infinite ease-out;
+    animation-delay: 1.5s;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(6) {
+    animation: ai-smoke-rise-{{ ai_gen_id }}-5 {{ block.settings.animation_speed }}s infinite ease-out;
+    animation-delay: 2s;
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }}-1 {
+    0% {
+      opacity: 0.8;
+      transform: translateX(-50%) translateY(0) scale(0.5);
+    }
+    25% {
+      opacity: 0.6;
+      transform: translateX(-45%) translateY(-30px) scale(0.7);
+    }
+    50% {
+      opacity: 0.4;
+      transform: translateX(-55%) translateY(-60px) scale(0.9);
+    }
+    75% {
+      opacity: 0.2;
+      transform: translateX(-40%) translateY(-90px) scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-60%) translateY(-120px) scale(1.3);
+    }
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }}-2 {
+    0% {
+      opacity: 0.7;
+      transform: translateX(-50%) translateY(0) scale(0.4);
+    }
+    25% {
+      opacity: 0.5;
+      transform: translateX(-60%) translateY(-35px) scale(0.6);
+    }
+    50% {
+      opacity: 0.3;
+      transform: translateX(-35%) translateY(-70px) scale(0.8);
+    }
+    75% {
+      opacity: 0.15;
+      transform: translateX(-65%) translateY(-105px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-30%) translateY(-140px) scale(1.2);
+    }
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }}-3 {
+    0% {
+      opacity: 0.6;
+      transform: translateX(-50%) translateY(0) scale(0.6);
+    }
+    25% {
+      opacity: 0.4;
+      transform: translateX(-40%) translateY(-25px) scale(0.8);
+    }
+    50% {
+      opacity: 0.3;
+      transform: translateX(-70%) translateY(-50px) scale(1);
+    }
+    75% {
+      opacity: 0.1;
+      transform: translateX(-35%) translateY(-75px) scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-80%) translateY(-100px) scale(1.4);
+    }
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }}-4 {
+    0% {
+      opacity: 0.5;
+      transform: translateX(-50%) translateY(0) scale(0.3);
+    }
+    25% {
+      opacity: 0.4;
+      transform: translateX(-65%) translateY(-40px) scale(0.5);
+    }
+    50% {
+      opacity: 0.25;
+      transform: translateX(-25%) translateY(-80px) scale(0.7);
+    }
+    75% {
+      opacity: 0.1;
+      transform: translateX(-75%) translateY(-120px) scale(0.9);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-20%) translateY(-160px) scale(1.1);
+    }
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }}-5 {
+    0% {
+      opacity: 0.4;
+      transform: translateX(-50%) translateY(0) scale(0.5);
+    }
+    25% {
+      opacity: 0.3;
+      transform: translateX(-30%) translateY(-45px) scale(0.7);
+    }
+    50% {
+      opacity: 0.2;
+      transform: translateX(-80%) translateY(-90px) scale(0.9);
+    }
+    75% {
+      opacity: 0.1;
+      transform: translateX(-15%) translateY(-135px) scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-85%) translateY(-180px) scale(1.3);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-incense-smoke-{{ ai_gen_id }} {
+      width: {{ block.settings.container_width | times: 0.7 }}px;
+      height: {{ block.settings.container_height | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}<div
+  class="ai-incense-smoke-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-incense-stick-{{ ai_gen_id }}"></div>
+  <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+  <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+  <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+  <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+  <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Incense smoke",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Position"
+    },
+    {
+      "type": "range",
+      "id": "horizontal_position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 85
+    },
+    {
+      "type": "range",
+      "id": "vertical_position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "z_index",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "label": "Layer order",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Container size"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Width",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "container_height",
+      "min": 100,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Height",
+      "default": 200
+    },
+    {
+      "type": "header",
+      "content": "Incense stick"
+    },
+    {
+      "type": "range",
+      "id": "stick_width",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Stick width",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "stick_height",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Stick height",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "stick_color",
+      "label": "Stick base color",
+      "default": "#8B4513"
+    },
+    {
+      "type": "color",
+      "id": "stick_tip_color",
+      "label": "Stick tip color",
+      "default": "#FF4500"
+    },
+    {
+      "type": "header",
+      "content": "Smoke"
+    },
+    {
+      "type": "range",
+      "id": "smoke_particle_size",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "Smoke particle size",
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "smoke_color",
+      "label": "Smoke color",
+      "default": "#696969"
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "s",
+      "label": "Animation speed",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Incense smoke"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

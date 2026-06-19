@@ -1,0 +1,456 @@
+{% doc %}
+  @prompt
+    burning inceses agarbbati with stand and overlay smoking animation but smoke will be constant but over all site not in line site will be show as smoky
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-incense-container-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    min-height: 300px;
+    justify-content: center;
+  }
+
+  .ai-incense-stand-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.stand_width }}px;
+    height: {{ block.settings.stand_height }}px;
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-incense-stick-{{ ai_gen_id }} {
+    position: absolute;
+    width: 4px;
+    height: {{ block.settings.stick_height }}px;
+    background: linear-gradient(to top, #8B4513 0%, #D2691E 50%, #FF6347 100%);
+    border-radius: 2px;
+    top: -{{ block.settings.stick_height | minus: 20 }}px;
+    left:50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 4px rgba(255, 99, 71, 0.5);
+  }
+
+  .ai-incense-tip-{{ ai_gen_id }} {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #FF4500, #FF6347);
+    border-radius: 50%;
+    box-shadow: 0 0 8px #FF4500;
+    animation: ai-incense-glow-{{ ai_gen_id }} 2s ease-in-out infinite alternate;
+  }
+
+  .ai-incense-local-smoke-{{ ai_gen_id }} {
+    position: absolute;
+    top: -{{ block.settings.stick_height | minus: 15 }}px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100px;
+    pointer-events: none;
+  }
+
+  .ai-incense-smoke-particle-{{ ai_gen_id }} {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(200, 200, 200, 0.6);
+    border-radius: 50%;
+    animation: ai-incense-smoke-rise-{{ ai_gen_id }} 4s linear infinite;
+  }
+
+  .ai-incense-smoke-particle-{{ ai_gen_id }}:nth-child(1) { animation-delay: 0s; left: 0px; }
+  .ai-incense-smoke-particle-{{ ai_gen_id }}:nth-child(2) { animation-delay: 0.5s; left: 2px; }
+  .ai-incense-smoke-particle-{{ ai_gen_id }}:nth-child(3) { animation-delay: 1s; left: -2px; }
+  .ai-incense-smoke-particle-{{ ai_gen_id }}:nth-child(4) { animation-delay: 1.5s; left: 1px; }
+  .ai-incense-smoke-particle-{{ ai_gen_id }}:nth-child(5) { animation-delay: 2s; left: -1px; }
+
+  .ai-incense-title-{{ ai_gen_id }} {
+    margin-top: 30px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.title_size }}px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .ai-incense-description-{{ ai_gen_id }} {
+    margin-top: 10px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.description_size }}px;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .ai-incense-global-smoke-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: {{ block.settings.smoke_z_index }};
+    opacity: {{ block.settings.smoke_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-incense-global-smoke-{{ ai_gen_id }} {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(200, 200, 200, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(180, 180, 180, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(220, 220, 220, 0.08) 0%, transparent 50%);
+    animation: ai-incense-global-smoke-drift-{{ ai_gen_id }} 20s ease-in-out infinite;
+  }
+
+  .ai-incense-smoke-wisp-{{ ai_gen_id }} {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 200, 200, 0.05) 0%, transparent 70%);
+    animation: ai-incense-wisp-float-{{ ai_gen_id }} 15s linear infinite;
+  }
+
+  .ai-incense-smoke-wisp-{{ ai_gen_id }}:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+  }
+
+  .ai-incense-smoke-wisp-{{ ai_gen_id }}:nth-child(2) {
+    top: 30%;
+    right: 20%;
+    animation-delay: 5s;
+    animation-duration: 22s;
+  }
+
+  .ai-incense-smoke-wisp-{{ ai_gen_id }}:nth-child(3) {
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 10s;
+    animation-duration: 16s;
+  }
+
+  .ai-incense-smoke-wisp-{{ ai_gen_id }}:nth-child(4) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 15s;
+    animation-duration: 20s;
+  }
+
+  @keyframes ai-incense-glow-{{ ai_gen_id }} {
+    0% { box-shadow: 0 0 8px #FF4500; }
+    100% { box-shadow: 0 0 16px #FF6347, 0 0 24px #FF4500; }
+  }
+
+  @keyframes ai-incense-smoke-rise-{{ ai_gen_id }} {
+    0% {
+      bottom: 0;
+      opacity: 0;transform: translateX(0) scale(1);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 0.6;
+      transform: translateX(10px) scale(1.5);
+    }
+    100% {
+      bottom: 100px;
+      opacity: 0;
+      transform: translateX(-5px) scale(2);
+    }
+  }
+
+  @keyframes ai-incense-global-smoke-drift-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(20px) translateY(-10px) rotate(1deg);
+    }
+    50% {
+      transform: translateX(-10px) translateY(15px) rotate(-0.5deg);
+    }
+    75% {
+      transform: translateX(15px) translateY(-5px) rotate(0.8deg);
+    }
+  }
+
+  @keyframes ai-incense-wisp-float-{{ ai_gen_id }} {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-50px) translateX(30px) rotate(180deg);
+      opacity: 0.8;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) translateX(-20px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-incense-container-{{ ai_gen_id }} {
+      min-height: 250px;
+      padding: {{ block.settings.padding | times: 0.7 }}px;
+    }
+    .ai-incense-stand-{{ ai_gen_id }} {
+      width: {{ block.settings.stand_width | times: 0.8 }}px;
+      height: {{ block.settings.stand_height | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}<incense-burner-{{ ai_gen_id }}
+  class="ai-incense-container-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-incense-stand-{{ ai_gen_id }}">
+    <div class="ai-incense-stick-{{ ai_gen_id }}">
+      <div class="ai-incense-tip-{{ ai_gen_id }}"></div>
+      <div class="ai-incense-local-smoke-{{ ai_gen_id }}">
+        <div class="ai-incense-smoke-particle-{{ ai_gen_id }}"></div>
+        <div class="ai-incense-smoke-particle-{{ ai_gen_id }}"></div>
+        <div class="ai-incense-smoke-particle-{{ ai_gen_id }}"></div>
+        <div class="ai-incense-smoke-particle-{{ ai_gen_id }}"></div>
+        <div class="ai-incense-smoke-particle-{{ ai_gen_id }}"></div>
+      </div>
+    </div>
+  </div>
+
+  {% if block.settings.title != blank %}
+    <h2 class="ai-incense-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+  {% endif %}
+
+  {% if block.settings.description != blank %}
+    <div class="ai-incense-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+  {% endif %}
+</incense-burner-{{ ai_gen_id }}>
+
+{% if block.settings.enable_global_smoke %}
+  <div class="ai-incense-global-smoke-overlay-{{ ai_gen_id }}">
+    <div class="ai-incense-global-smoke-{{ ai_gen_id }}"></div><div class="ai-incense-smoke-wisp-{{ ai_gen_id }}"></div>
+    <div class="ai-incense-smoke-wisp-{{ ai_gen_id }}"></div>
+    <div class="ai-incense-smoke-wisp-{{ ai_gen_id }}"></div>
+    <div class="ai-incense-smoke-wisp-{{ ai_gen_id }}"></div>
+  </div>
+{% endif %}
+
+<script>
+(function() {
+  classIncenseBurner{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.setupSmokeEffect();
+    }
+
+    setupSmokeEffect() {
+      const smokeContainer = this.querySelector('.ai-incense-local-smoke-{{ ai_gen_id }}');
+      if (!smokeContainer) return;
+
+      setInterval(() => {
+        this.createSmokeParticle(smokeContainer);
+      }, 800);
+    }
+
+    createSmokeParticle(container) {
+      const particle = document.createElement('div');
+      particle.className = 'ai-incense-smoke-particle-{{ ai_gen_id }}';
+      particle.style.left = Math.random() * 4 - 2 + 'px';
+      particle.style.animationDelay = '0s';
+      container.appendChild(particle);
+
+      setTimeout(() => {
+        if (particle.parentNode) {
+          particle.parentNode.removeChild(particle);
+        }
+      }, 4000);
+    }
+  }
+
+  customElements.define('incense-burner-{{ ai_gen_id }}', IncenseBurner{{ ai_gen_id }});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Burning incense",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Sacred Incense"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Experience the calming aroma of traditional agarbatti"
+    },
+    {
+      "type": "header",
+      "content": "Incense design"
+    },
+    {
+      "type": "range",
+      "id": "stand_width",
+      "min": 60,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Stand width",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "stand_height",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Stand height",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "stick_height",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Stick height",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Global smoke effect"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_global_smoke",
+      "label": "Enable site-wide smoke overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "smoke_opacity",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Smoke opacity",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "smoke_z_index",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "label": "Smoke layer priority",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#2c1810"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f5f5dc"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Burning incense"
+    }
+  ]
+}
+{% endschema %}

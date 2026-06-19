@@ -1,0 +1,150 @@
+
+<section class="custom-collection-grid page-width">
+  {% if section.settings.title != blank %}
+    <h2 class="text-center mb-6">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  <div class="collection-grid">
+    {% for block in section.blocks %}
+      {% assign collection = collections[block.settings.collection] %}
+      {% if collection %}
+        <div class="collection-card">
+          <a href="{{ collection.url }}" class="collection-link">
+            {% if block.settings.custom_image != blank %}
+              <img
+                src="{{ block.settings.custom_image | image_url: width: 800 }}"
+                alt="{{ collection.title }}"
+                class="collection-image"
+              >
+            {% elsif collection.image %}
+              <img
+                src="{{ collection.image | img_url: '800x' }}"
+                alt="{{ collection.title }}"
+                class="collection-image"
+              >
+            {% else %}
+              <div class="no-image">No image available</div>
+            {% endif %}
+            <div class="collection-overlay">
+              <h3>{{ collection.title }}</h3>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.custom-collection-grid {
+  padding: 10px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-collection-grid h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Tablet view: 2 columns */
+@media (max-width: 992px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Mobile view: still 2 columns instead of 1 */
+@media (max-width: 600px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .custom-collection-grid {padding:10px 15px;}
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.collection-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.collection-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.collection-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(226 0 21 / 85%);
+  color:rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Custom Collection Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Choose Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Upload Custom Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Custom Collection Grid",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}

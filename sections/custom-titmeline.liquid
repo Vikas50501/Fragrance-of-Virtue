@@ -1,0 +1,208 @@
+{%- if section.blocks.size > 0 -%}
+  {%- render 'section-spacing-collapsing' -%}
+
+  {%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  CSS
+  ------------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+
+  <style>
+    #shopify-section-{{ section.id }} {
+      --timeline-nav-item-count: {{ section.blocks.size }};
+    }
+    .custom_timeline {
+   position: relative;
+  max-width: 700px;
+  width: 100%;
+  padding-left: 30px;
+  {% comment %} border-left: 2px solid {{section.settings.dot_background }}; {% endcomment %}
+  {% comment %} margin: 0 auto; {% endcomment %}
+   margin:0 12px;
+}
+.custom_timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;          /* control where the line starts */
+  bottom: 70px;       /* control where the line ends */
+  width: 2px;
+  background-color: #E4B744;
+  border-radius: 3px; /* optional for soft edges */
+}
+
+.custom_timeline .timeline-step {
+      position: relative;
+  margin-bottom: 40px;
+}
+
+.custom_timeline .dot {
+    position: absolute;
+  left: -55px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+     line-height: 3;
+  border-radius: 50%;
+ 
+  background: {{section.settings.dot_background }};
+ 
+  box-shadow: 0 0 8px {{ section.settings.dot_background }};
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom_timeline .content{
+ background:{{ section.settings.content_background }};
+ margin-left: 40px;
+    padding: 10px 20px;
+border-radius: 10px;
+}
+.custom_timeline .content h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  color:{{ section.settings.heading_color }}
+}
+
+.custom_timeline .content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: {{section.settings.text_color }};
+}
+{% comment %} .custom_timeline .dot span {
+    padding-left: 10px;
+} {% endcomment %}
+  </style>
+
+   <div {% render 'section-properties' %}>
+      <div class="section-stack">
+         {%- render 'section-header', heading: section.settings.title,text_alignment: section.settings.text_alignment -%}
+
+<div class="custom_timeline">
+    {% for block in section.blocks %}
+  <div class="timeline-step">
+    <div class="dot"><span>{{ block.settings.year }}</span></div>
+    <div class="content">
+        <span class="subheading">{{ block.settings.subheading}}</span>
+      <h3>{{block.settings.title}}</h3>
+      <p>{{ block.settings.content }}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+</div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "Custom Timeline",
+  "class": "shopify-section--timeline",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+        {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured content"
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "content_background",
+      "label": "Content Background"
+    },
+    {
+      "type": "color",
+      "id": "dot_background",
+      "label": "Dot Background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Subheading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Timeline",
+      "blocks": [
+        
+      ]
+    }
+  ]
+}
+{% endschema %}

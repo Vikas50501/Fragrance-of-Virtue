@@ -1,0 +1,261 @@
+{% doc %}
+  @prompt
+    create burning agarbbati with smoke animation  on over all site
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-incense-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: {{ block.settings.z_index }};
+    overflow: hidden;
+  }
+
+  .ai-incense-stick-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: {{ block.settings.stick_position_bottom }}%;
+    right: {{ block.settings.stick_position_right }}%;
+    width: {{ block.settings.stick_width }}px;
+    height: {{ block.settings.stick_height }}px;
+    background: linear-gradient(
+      to bottom,
+      {{ block.settings.stick_color }}0%,
+      {{ block.settings.stick_tip_color }} 95%,
+      #ff6b35 100%
+    );
+    border-radius: 2px;
+    transform: rotate({{ block.settings.stick_angle }}deg);
+    transform-origin: bottom center;
+  }
+
+  .ai-incense-tip-{{ ai_gen_id }} {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #ff4500 0%, #ff6b35 50%, transparent 100%);
+    border-radius: 50%;
+    animation: ai-incense-glow-{{ ai_gen_id }} 2s ease-in-out infinite alternate;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: {{ block.settings.smoke_particle_size }}px;
+    height: {{ block.settings.smoke_particle_size }}px;
+    background: radial-gradient(circle, {{ block.settings.smoke_color }} 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: {{ block.settings.smoke_opacity }};
+    animation: ai-smoke-rise-{{ ai_gen_id }} {{ block.settings.smoke_duration }}s linear infinite;
+  }
+
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(2) { animation-delay: -0.5s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(3) { animation-delay: -1s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(4) { animation-delay: -1.5s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(5) { animation-delay: -2s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(6) { animation-delay: -2.5s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(7) { animation-delay: -3s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(8) { animation-delay: -3.5s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(9) { animation-delay: -4s; }
+  .ai-smoke-particle-{{ ai_gen_id }}:nth-child(10) { animation-delay: -4.5s; }
+
+  @keyframes ai-incense-glow-{{ ai_gen_id }} {
+    0% {
+      box-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500, 0 0 15px #ff4500;
+    }
+    100% {
+      box-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35, 0 0 30px #ff6b35;
+    }
+  }
+
+  @keyframes ai-smoke-rise-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(-50%) translateY(0) scale(0.5);
+      opacity: {{ block.settings.smoke_opacity }};
+    }
+    25% {
+      transform: translateX(calc(-50% + 20px)) translateY(-25vh) scale(0.8);
+      opacity: calc({{ block.settings.smoke_opacity }} * 0.8);
+    }
+    50% {
+      transform: translateX(calc(-50% - 15px)) translateY(-50vh) scale(1);
+      opacity: calc({{ block.settings.smoke_opacity }} * 0.6);
+    }
+    75% {
+      transform: translateX(calc(-50% + 30px)) translateY(-75vh) scale(1.2);
+      opacity: calc({{ block.settings.smoke_opacity }} * 0.3);
+    }
+    100% {
+      transform: translateX(calc(-50% - 10px)) translateY(-100vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ai-incense-stick-{{ ai_gen_id }} {
+      width: calc({{ block.settings.stick_width }}px * 0.7);
+      height: calc({{ block.settings.stick_height }}px * 0.7);
+    }
+    
+    .ai-smoke-particle-{{ ai_gen_id }} {
+      width: calc({{ block.settings.smoke_particle_size }}px * 0.8);
+      height: calc({{ block.settings.smoke_particle_size }}px * 0.8);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-incense-tip-{{ ai_gen_id }},
+    .ai-smoke-particle-{{ ai_gen_id }} {
+      animation: none;
+    }
+  }
+{% endstyle %}<div class="ai-incense-overlay-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-incense-stick-{{ ai_gen_id }}">
+    <div class="ai-incense-tip-{{ ai_gen_id }}"></div>
+    
+    {% for i in (1..10) %}
+      <div class="ai-smoke-particle-{{ ai_gen_id }}"></div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Burning incense overlay",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Position"
+    },
+    {
+      "type": "range",
+      "id": "stick_position_bottom",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Distance from bottom",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "stick_position_right",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Distance from right",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "stick_angle",
+      "min": -45,
+      "max": 45,
+      "step": 5,
+      "unit": "deg",
+      "label": "Stick angle",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "z_index",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "label": "Layer position",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Incense stick"
+    },
+    {
+      "type": "range",
+      "id": "stick_width",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Stick width",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "stick_height",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Stick height",
+      "default": 120
+    },
+    {
+      "type": "color",
+      "id": "stick_color",
+      "label": "Stick color",
+      "default": "#8B4513"
+    },
+    {
+      "type": "color",
+      "id": "stick_tip_color",
+      "label": "Burning tip color",
+      "default": "#654321"
+    },
+    {
+      "type": "header",
+      "content": "Smoke animation"
+    },
+    {
+      "type": "range",
+      "id": "smoke_particle_size",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Smoke particle size",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "smoke_duration",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Smoke animation duration",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "smoke_opacity",
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.1,
+      "label": "Smoke opacity",
+      "default": 0.4
+    },
+    {
+      "type": "color",
+      "id": "smoke_color",
+      "label": "Smoke color",
+      "default": "#D3D3D3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Burning incense overlay"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

@@ -1,0 +1,258 @@
+{% style %}
+  .floating-social-icons-wrapper {
+    position: fixed;
+    {% case section.settings.sticky-positon %}
+        {% when 'right' %}
+            right: 0;
+        {% when 'left' %}
+            left: 0;
+    {% endcase %}
+    bottom: {{ section.settings.bottom_position }}%;
+    width: {{ section.settings.icon_width }}px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    z-index: 9999;
+  }
+  .floating-social-icons-wrapper ul.social-media {
+    gap: 0;
+  }
+  .floating-social-icons-wrapper ul li{
+    background: var(--bg-color);
+  }
+  .floating-social-icons-wrapper ul li a{
+    text-align: center;
+    width: {{ section.settings.icon_width }}px;
+    display: flex;
+    height: {{ section.settings.icon_width }}px;
+    justify-content: center;
+    align-items: center;
+    color: {{ section.settings.text_color }};
+  }
+  .floating-social-icons-wrapper ul li a svg {
+    width: 50%;
+   }
+  .floating-social-icons-wrapper ul li a.tap-area:before {
+    content: "";
+    inset: 0;
+    position: relative;
+  }
+  @media screen and (max-width: 699px) {
+    .floating-social-icons-wrapper {
+      position: fixed;
+      left:0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      z-index: 9999;
+      /* height: 40px; */
+      margin: -15px auto -7px auto;
+    }
+  
+    .floating-social-icons-wrapper .social-media{
+      display: grid;
+      grid-template-columns: repeat(var(--social-count), 1fr);
+    }
+  .floating-social-icons-wrapper ul li a {
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+  }
+  .footer{
+    --footer-social-icon-padding: 65px;
+  }
+    {% if template.name contains 'product' %}
+      #shopify-section-{{ section.id }} {
+        display: none;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<div class="floating-social-icons-wrapper">
+    {%- render 'social-media-new', section: section -%}
+</div>
+
+{% schema %}
+{
+  "name": "Floating Social Icons",
+  "class": "shopify-section--floating-social-icons",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "sticky-positon",
+      "label": "Sticky Position",
+      "options": [
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "right"
+    },
+    {
+        "type": "range",
+        "id": "bottom_position",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "step": 2,
+        "label": "Top Position",
+        "default": 10
+    },
+    {
+        "type": "range",
+        "id": "icon_width",
+        "min": 10,
+        "max": 100,
+        "unit": "px",
+        "step": 1,
+        "label": "Icon width",
+        "default": 50
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Color",
+        "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Shop all Icons settings"
+    },
+    {
+        "type": "color",
+        "id": "custom_icon_bg_color",
+        "label": "Custom Icon background",
+        "default": "#000000"
+    },
+    {
+      "type": "url",
+      "id": "custom_icon_link",
+      "label": "custom icon link"
+    },
+    {
+        "type": "color",
+        "id": "fb_bg_color",
+        "label": "Facebook background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "twit_bg_color",
+        "label": "Twitter background",
+        "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "instagram_gradient",
+      "label": "instagram gradient",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "th_bg_color",
+        "label": "Threads background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "pin_bg_color",
+        "label": "Pinterest background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "yt_bg_color",
+        "label": "Youtube background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "tt_bg_color",
+        "label": "Tiktok background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "vmo_bg_color",
+        "label": "Vimeo background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "lin_bg_color",
+        "label": "Linkedin background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "sc_bg_color",
+        "label": "Snapchat background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "wa_bg_color",
+        "label": "Whatsapp background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "tmb_bg_color",
+        "label": "Tumblr background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "fac_bg_color",
+        "label": "Fancy background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "wc_bg_color",
+        "label": "Wechat background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "rdt_bg_color",
+        "label": "Reddit background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "ln_bg_color",
+        "label": "Line background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "spt_bg_color",
+        "label": "Spotify background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "btn21_bg_color",
+        "label": "Buttons21 background",
+        "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+       "name": "Floating Social Icons"
+    }
+  ]
+}
+{% endschema %}
