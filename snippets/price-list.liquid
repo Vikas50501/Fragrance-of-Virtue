@@ -40,6 +40,12 @@ Supported variables
   endcase
 -%}
 
+{%- comment -%} On product cards, force the price to the brand red regardless of sale state. {%- endcomment -%}
+{%- assign card_price_attr = '' -%}
+{%- if card -%}
+  {%- assign card_price_attr = ' style="color: rgb(226 0 22)"' -%}
+{%- endif -%}
+
 <price-list class="price-list {% if size == 'lg' %}price-list--lg{% endif %} {% if text_alignment == 'center' %}justify-center{% endif %}">
   {%- if variant != blank -%}
     {%- comment -%}
@@ -113,7 +119,7 @@ Supported variables
       {%- endcapture -%}
 
       {%- if cheapest_variant.price < cheapest_variant.compare_at_price -%}
-        <sale-price class="{{ on_sale_price_classes }}">
+        <sale-price class="{{ on_sale_price_classes }}"{{ card_price_attr }}>
           <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
           {{- 'product.price.from_price_html' | t: price_min: price_min -}}
         </sale-price>
@@ -128,13 +134,13 @@ Supported variables
           {%- endif -%}
         </compare-at-price>
       {%- else -%}
-        <sale-price class="{{ regular_price_classes }}">
+        <sale-price class="{{ regular_price_classes }}"{{ card_price_attr }}>
           <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
           {{- 'product.price.from_price_html' | t: price_min: price_min -}}
         </sale-price>
       {%- endif -%}
     {%- elsif product.price < product.compare_at_price -%}
-      <sale-price class="{{ on_sale_price_classes }}">
+      <sale-price class="{{ on_sale_price_classes }}"{{ card_price_attr }}>
         <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
 
         {%- if settings.currency_code_enabled -%}
@@ -170,12 +176,12 @@ Supported variables
         {%- endif -%}
       {%- endcapture -%}
 
-      <sale-price class="{{ regular_price_classes }}">
+      <sale-price class="{{ regular_price_classes }}"{{ card_price_attr }}>
         <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
         {{- 'product.price.from_price_html' | t: price_min: price_min, price_max: price_max -}}
       </sale-price>
     {%- else -%}
-      <sale-price class="{{ regular_price_classes }}">
+      <sale-price class="{{ regular_price_classes }}"{{ card_price_attr }}>
         <span class="sr-only">{{ 'product.price.sale_price' | t }}</span>
 
         {%- if settings.currency_code_enabled -%}
