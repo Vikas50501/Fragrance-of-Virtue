@@ -1,1 +1,1347 @@
-{"sections":{"section-1":{"type":"slideshow","blocks":{"block-2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/13.png","content_max_width":780,"mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","subheading":"","title":"","heading_tag":"h1","button_text":"","button_link":"","text_color":"#ffffff","button_background":"#ffffff","button_text_color":"#000000","overlay_color":"#000000","overlay_opacity":0,"background":"","background_gradient":""}},"block-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/14.png","content_max_width":640,"mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","subheading":"","title":"","heading_tag":"h1","button_text":"","button_link":"","text_color":"#ffffff","button_background":"#ffffff","button_text_color":"#000000","overlay_color":"#000000","overlay_opacity":0,"background":"","background_gradient":""}},"block-3":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/pic2_e4375fcd-08a4-4725-b1d4-06510323f693.jpg","content_max_width":640,"mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","subheading":"","title":"","heading_tag":"h1","button_text":"","button_link":"","text_color":"#ffffff","button_background":"#ffffff","button_text_color":"#000000","overlay_color":"#000000","overlay_opacity":0,"background":"","background_gradient":""}},"image_X9pEFx":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/15.png","content_max_width":780,"mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","subheading":"","title":"","heading_tag":"h0","button_text":"","button_link":"shopify:\/\/collections\/wellness","text_color":"#ffffff","button_background":"#ffffff","button_text_color":"#000000","overlay_color":"#000000","overlay_opacity":0,"background":"","background_gradient":""}},"image_em3k7X":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/9.png","content_max_width":780,"mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","subheading":"","title":"","heading_tag":"h0","button_text":"","button_link":"shopify:\/\/collections\/devotional-fragrances","text_color":"#ffffff","button_background":"#ffffff","button_text_color":"#000000","overlay_color":"#000000","overlay_opacity":0,"background":"","background_gradient":""}}},"block_order":["block-2","block-1","block-3","image_X9pEFx","image_em3k7X"],"name":"Slideshow","settings":{"full_width":true,"allow_transparent_header":false,"show_initial_transition":true,"image_size":"auto","controls_type":"dots","transition_type":"fade_with_text","autoplay":true,"cycle_speed":6,"background":"rgba(0,0,0,0)","background_gradient":""}},"scrolling_icon_text_kx6HaA":{"type":"scrolling-icon-text","blocks":{"block_CprTbr":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/charcoal-free.png","text":"Charcoal Free"}},"block_fQfWG8":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/perfume.png","text":"Long-Lasting Fragrance"}},"block_wpfia8":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/fire.png","text":"Long-Burning Incense"}},"block_CCbcGN":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/save-the-world.png","text":"Eco-Friendly"}},"block_WNtMLJ":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/trophy.png","text":"Award-Winning"}},"block_mkiUKc":{"type":"block","settings":{"icon":"shopify:\/\/shop_images\/memorial.png","text":"Legacy Since 1961"}}},"block_order":["block_CprTbr","block_fQfWG8","block_wpfia8","block_CCbcGN","block_WNtMLJ","block_mkiUKc"],"name":"Scrolling icon with text","settings":{"full_width":true,"text":"Promotion text","text_size":"xsmall","text_style":"fill","scrolling_mode":"auto","scrolling_speed":9,"background":"","background_gradient":"","text_color":"#f0a369","text_gradient":""}},"collection_list_p4JRJT":{"type":"collection-list","blocks":{"collection_6gURhQ":{"type":"collection","disabled":true,"settings":{"collection":"incense-stick","image":"shopify:\/\/shop_images\/Premium_Lifestyle_Shot.png","subheading":"","title":"Incense Sticks{{ block.settings.collection.title }}﻿","url":"","heading_tag":"h2","text_position":"place-self-center text-center","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"collection_8wndn7":{"type":"collection","settings":{"collection":"incense-stick","image":"shopify:\/\/shop_images\/Premium_Lifestyle_Shot.png","subheading":"","title":"Incense Sticks","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}},"collection_rHiqGJ":{"type":"collection","settings":{"collection":"dhoop-products","image":"shopify:\/\/shop_images\/1_1.png","subheading":"","title":"Dhoop Products","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}},"collection_yrk8ML":{"type":"collection","disabled":true,"settings":{"collection":"energy-upliftment","image":"shopify:\/\/shop_images\/nGSr2DIi.png","subheading":"","title":"Meditation","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}},"collection_KLGm6C":{"type":"collection","settings":{"collection":"best-sellers","image":"shopify:\/\/shop_images\/MG_9954.jpg","subheading":"","title":"Best Sellers","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}},"collection_QTAEDQ":{"type":"collection","settings":{"collection":"gift-box","image":"shopify:\/\/shop_images\/box_mock_up3_c5c9c015-872a-4b87-960f-c64c84524e3a.jpg","subheading":"","title":"Gift Boxes","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}},"collection_qbjRmU":{"type":"collection","disabled":true,"settings":{"collection":"focus-spiritual-balance","image":"shopify:\/\/shop_images\/uvKbl5T7.png","subheading":"","title":"Focus","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}},"collection_zXmr7z":{"type":"collection","disabled":true,"settings":{"collection":"floral-fragrances","image":"shopify:\/\/shop_images\/i2WhMZpi.webp","subheading":"","title":"Concentration","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":5}}},"block_order":["collection_6gURhQ","collection_8wndn7","collection_rHiqGJ","collection_yrk8ML","collection_KLGm6C","collection_QTAEDQ","collection_qbjRmU","collection_zXmr7z"],"custom_css":[".bleed {justify-content: center;}"],"name":"Collection list","settings":{"full_width":true,"stack_collections":false,"collections_per_row_mobile":"4","collections_per_row":7,"collections_image_shape":"circle","collections_title_position":"below-img","collection-text-align":"center","show_progress_bar":false,"subheading":"","title":"","content":"","link_url":"","link_text":"","background":"#ffffff","background_gradient":"","text_color":"#1a1a1a","heading_color":"","heading_gradient":""}},"section-5":{"type":"featured-collection","custom_css":["@media (max-width: 768px) {.bleed {padding-inline-start: 10px; } .product-list {--product-list-items-per-row: 2; --product-list-carousel-item-width: 74vw; --product-list-grid: 1fr; } product-list.product-list {display: grid; grid-auto-flow: column; grid-auto-columns: 175px; gap: 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; scroll-padding-left: 10px; scrollbar-width: none; }}"],"settings":{"collection":"herbal-and-traditional","products":["panadi-rudraksh-agarbatti-aromatherapy","100-pure-bhimseni-kapoor","arabian-night-mystical-night-color-agarbatti","ashtavinayak-color-agarbatti-incense-sticks","traditional-ayodhya-ashwamedh-sambrani-incense","ayodhya-ashwamedh-sambrani","ayodhya-rose-havan-cup","chandan-aromatherapy-color-agarbatti-incense-sticks"],"full_width":false,"stack_products":true,"show_progress_bar":false,"products_count":8,"products_per_row_mobile":"2","products_per_row_desktop":4,"subheading":"","title":"Best sellers","content":"","link_url":"shopify:\/\/collections\/all","link_text":"","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","product_card_background":"","product_card_text_color":""}},"collection_list_RAywJr":{"type":"collection-list","blocks":{"collection_Pxfzcb":{"type":"collection","settings":{"collection":"incense-stick","image":"shopify:\/\/shop_images\/kapoor_agarbatti_13a0fcdc-01a4-41d7-a7bc-6df2105c6d73.png","subheading":"","title":"","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}},"collection_TDfAV7":{"type":"collection","settings":{"collection":"dhoop-cone","image":"shopify:\/\/shop_images\/NKwRgP7e.png","subheading":"","title":"Dhoop","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":30}},"collection_UrMCxq":{"type":"collection","settings":{"collection":"camphor","image":"shopify:\/\/shop_images\/BhimseniKapoorpic4.jpg","subheading":"","title":"","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":30}},"collection_3qj4DR":{"type":"collection","settings":{"collection":"make-your-saver-pack","image":"shopify:\/\/shop_images\/Combo.png","subheading":"","title":"","url":"","heading_tag":"h6","text_position":"place-self-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":30}}},"block_order":["collection_Pxfzcb","collection_TDfAV7","collection_UrMCxq","collection_3qj4DR"],"custom_css":[".bleed {justify-content: center;}"],"name":"Collection list","settings":{"full_width":true,"stack_collections":false,"collections_per_row_mobile":"4","collections_per_row":5,"collections_image_shape":"original","collections_title_position":"below-img","collection-text-align":"center","show_progress_bar":false,"subheading":"","title":"Our Collections","content":"","link_url":"","link_text":"","background":"#ffffff","background_gradient":"","text_color":"#1a1a1a","heading_color":"#1a1a1a","heading_gradient":""}},"custom_collection_grid_f9feEK":{"type":"custom-collection-grid","blocks":{"collection_3REy3t":{"type":"collection","settings":{"collection":"incense-stick","custom_image":"shopify:\/\/shop_images\/kapoor_agarbatti.png"}},"collection_zVXg68":{"type":"collection","settings":{"collection":"dhoop-batti","custom_image":"shopify:\/\/shop_images\/MG_0981.jpg"}},"collection_LHeUej":{"type":"collection","settings":{"collection":"dhoop-cone","custom_image":"shopify:\/\/shop_images\/mogra_dhoop_cone.png"}},"collection_3wGcBq":{"type":"collection","settings":{"collection":"dhoop-cups","custom_image":"shopify:\/\/shop_images\/MG_0971.jpg"}},"collection_zmtirA":{"type":"collection","settings":{"collection":"camphor","custom_image":"shopify:\/\/shop_images\/BhimseniKapoorpic4.jpg"}}},"block_order":["collection_3REy3t","collection_zVXg68","collection_LHeUej","collection_3wGcBq","collection_zmtirA"],"disabled":true,"name":"Custom Collection Grid","settings":{"title":"Our Collections"}},"logo_list_bCWfVP":{"type":"logo-list","blocks":{"logo_KhY388":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/zodiac.png","logo_width":150,"link":"shopify:\/\/collections\/aromatherapy-pack"}},"logo_JWFE3h":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/sit-in.png","logo_width":150,"link":"shopify:\/\/collections\/ritual-fragrances"}},"logo_K9KLYt":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/cards.png","logo_width":150,"link":"shopify:\/\/collections\/stress-buster-pack"}}},"block_order":["logo_KhY388","logo_JWFE3h","logo_K9KLYt"],"name":"Logo list","settings":{"full_width":true,"stack_mobile":true,"title":"","content":"","text_alignment":"center","items_per_row":5,"background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","logo_item_background":"#ffffff","logo_item_border":""}},"multi_column_v2_9CDXmU":{"type":"multi-column-v2","blocks":{"item_LNYnQy":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 6.25.04 PM (1).mp4","show_controls":false,"title":"Pooja & Rituals","heading_tag":"h4","content":"<p>Daily Pooja, Purification & cleansing, Devotional & Temple use.<\/p>","link_url":"shopify:\/\/collections\/pooja-ritual","link_text":"Shop Now","link_style":"link"}},"item_MMKYnX":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 6.25.04 PM.mp4","show_controls":false,"title":"Aromatherapy","heading_tag":"h4","content":"<p>Focus & Spiritual Balance, Relaxation & Calm, Energy & Upliftment.<\/p>","link_url":"shopify:\/\/collections\/aromatherapy-pack","link_text":"Shop Now","link_style":"link"}},"item_TTJeij":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 6.25.03 PM (3).mp4","show_controls":false,"title":"Make Your Own Pack","heading_tag":"h4","content":"<p>Because every prayer deserves your personal touch.<\/p>","link_url":"shopify:\/\/collections\/make-your-saver-pack","link_text":"Shop Now","link_style":"link"}},"item_PQeCqV":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 6.25.03 PM.mp4","show_controls":false,"title":"Meditation","heading_tag":"h4","content":"<p>Peace, Gratitude, Wisdom.<\/p>","link_url":"shopify:\/\/collections\/meditation","link_text":"Shop Now","link_style":"link"}},"item_HgWNKQ":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 6.25.03 PM (1).mp4","show_controls":false,"title":"Wellness","heading_tag":"h4","content":"<p>Stress Buster, Better Sleep, Mood Uplifter, Healing.<\/p>","link_url":"shopify:\/\/collections\/wellness","link_text":"Shop Now","link_style":"link"}}},"block_order":["item_LNYnQy","item_MMKYnX","item_TTJeij","item_PQeCqV","item_HgWNKQ"],"name":"Multi-column V2","settings":{"full_width":true,"stack_on_mobile":false,"per_row_column":5,"gap":"small","text_alignment":"center","subheading":"","title":"","content":"","background":"","background_gradient":"","text_color":"","inner_background":""}},"rich_text_4n7EqP":{"type":"rich-text","blocks":{"subheading_cDdxeY":{"type":"subheading","settings":{"text":"Fragrance of Virtue"}},"heading_7cDRGP":{"type":"heading","settings":{"text":"About Us","heading_tag":"h2","text_color":"","gradient":""}},"richtext_rckAyV":{"type":"richtext","settings":{"content":"<p>Welcome to<strong> Fragrance of Virtue<\/strong> , where we specialize in engineering a wide range of incense products, including agarbatti, Dhoop batti, dhoop cone and cups, natural resins, dhuna powder, kapoor, and puja-related items. Our carefully crafted incense is designed for use in puja rituals, meditation, healing, aromatherapy and creating a fragrant environment.<\/p>"}},"button_BfdfRk":{"type":"button","settings":{"style":"fill","size":"sm","text":"Know More","url":"shopify:\/\/pages\/about-us","background":"#ffb74a","text_color":"#1a1a1a"}}},"block_order":["subheading_cDdxeY","heading_7cDRGP","richtext_rckAyV","button_BfdfRk"],"name":"Rich text","settings":{"full_width":true,"content_width":"small","text_position":"center","background":"","background_gradient":"","text_color":""}},"video_qLCECw":{"type":"video","blocks":{"play_ytUNhR":{"type":"play","disabled":true,"settings":{}}},"block_order":["play_ytUNhR"],"name":"Video","settings":{"full_width":false,"allow_transparent_header":false,"autoplay":true,"video_size":"auto","video":"shopify:\/\/files\/videos\/video-banner.mp4","external_video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"collection_list_yH4qwq":{"type":"collection-list","blocks":{"collection_7jNUf3":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/chandancopy.png","subheading":"","title":"Pooja & Rituals","url":"","heading_tag":"h5","text_position":"place-self-end-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}},"collection_riw9p7":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/rose1.png","subheading":"","title":"Aroma","url":"","heading_tag":"h5","text_position":"place-self-end-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}},"collection_rw3Qea":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/WhatsAppImage2025-07-24at4.06.51PM.jpg","subheading":"","title":"Wellness","url":"","heading_tag":"h5","text_position":"place-self-end-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}},"collection_gzn9JC":{"type":"collection","settings":{"collection":"","image":"shopify:\/\/shop_images\/XKohmKt1-200-200.webp","subheading":"","title":"Gifts","url":"","heading_tag":"h5","text_position":"place-self-end-center text-center","text_color":"#1a1a1a","overlay_color":"#000000","overlay_opacity":0}}},"block_order":["collection_7jNUf3","collection_riw9p7","collection_rw3Qea","collection_gzn9JC"],"disabled":true,"name":"Collection list","settings":{"full_width":false,"stack_collections":true,"collections_per_row_mobile":"2","collections_per_row":4,"collections_image_shape":"original","collections_title_position":"below-img","collection-text-align":"center","show_progress_bar":false,"subheading":"","title":"Category","content":"","link_url":"","link_text":"","background":"","background_gradient":"","text_color":"#1a1a1a","heading_color":"","heading_gradient":""}},"before_after_image_VznPkz":{"type":"before-after-image","name":"Before\/after image","settings":{"full_width":true,"subheading":"","title":"Why Choose FOV ?","content":"","before_image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-12-04_at_6.37.17_PM.jpg","after_image":"shopify:\/\/shop_images\/WhatsApp_Image_2025-12-04_at_6.37.18_PM.jpg","expand_image":false,"text_position":"center","before_after_text_position":"bottom","before_text":"Before","after_text":"After","drag_initial_position":50,"background":"","background_gradient":"","text_color":"","before_text_color":"#ffffff","after_text_color":"#ffffff","drag_cursor_background":"#ffffff","drag_cursor_color":"#000000"}},"before_after_image_FM7fU7":{"type":"before-after-image","disabled":true,"name":"Before\/after image","settings":{"full_width":true,"subheading":"","title":"Why Choose FOV ?","content":"","before_image":"shopify:\/\/shop_images\/After.png","after_image":"shopify:\/\/shop_images\/Before.png","expand_image":false,"text_position":"center","before_after_text_position":"bottom","before_text":"After","after_text":"Before","drag_initial_position":50,"background":"","background_gradient":"","text_color":"","before_text_color":"#ffffff","after_text_color":"#ffffff","drag_cursor_background":"#ffffff","drag_cursor_color":"#000000"}},"media_grid_KnfnNH":{"type":"media-grid","blocks":{"video_6NyRw6":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 12.23.23 PM.mp4","external_video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","show_video_controls":false,"title":"Before","heading_tag":"h4","link_url":"","link_text":"","mobile_text_position":"place-self-end-center text-center","desktop_column_span":2,"desktop_row_span":3,"desktop_text_position":"sm:place-self-end-center sm:text-center","background":"#000000","background_gradient":"","text_color":"#ffffff","text_gradient":"","button_background":"#000000","button_text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"video_F3cnCx":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 12.23.24 PM.mp4","external_video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","show_video_controls":false,"title":"After","heading_tag":"h4","link_url":"","link_text":"","mobile_text_position":"place-self-end-center text-center","desktop_column_span":2,"desktop_row_span":3,"desktop_text_position":"sm:place-self-end-center sm:text-center","background":"#000000","background_gradient":"","text_color":"#ffffff","text_gradient":"","button_background":"#000000","button_text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}}},"block_order":["video_6NyRw6","video_F3cnCx"],"disabled":true,"name":"Media grid","settings":{"full_width":true,"reduce_width":false,"desktop_row_height":350,"mobile_row_height":150,"background":"","background_gradient":""}},"section-15":{"type":"feature-chart","blocks":{"block-1":{"type":"headings","settings":{"heading_1":"Driver","heading_2":"Weight","heading_3":"Dimensions","heading_4":"Battery","heading_5":"","heading_6":"","heading_7":"","heading_8":"","heading_9":"","heading_10":"","heading_11":"","heading_12":"","heading_13":"","heading_14":"","heading_15":"","heading_16":"","heading_17":"","heading_18":"","heading_19":"","heading_20":""}},"block-2":{"type":"values","settings":{"product":"","value_1":"<p>40mm Beryllium<\/p>","value_2":"<p>245g<\/p>","value_3":"<p>165mm x 190mm x 66mm<\/p>","value_4":"<p>24 hours<\/p>","value_5":"","value_6":"","value_7":"","value_8":"","value_9":"","value_10":"","value_11":"","value_12":"","value_13":"","value_14":"","value_15":"","value_16":"","value_17":"","value_18":"","value_19":"","value_20":"","view_button_background":"","view_button_text_color":""}},"block-3":{"type":"values","settings":{"product":"","value_1":"<p>40mm Beryllium<\/p>","value_2":"<p>205g (On-Ear), 239g (Over-Ear)<\/p>","value_3":"<p>190mm x 155mm x 34mm (On-Ear), 200mm x 165mm x 40mm (Over-Ear)<\/p>","value_4":"<p>16 hours<\/p>","value_5":"","value_6":"","value_7":"","value_8":"","value_9":"","value_10":"","value_11":"","value_12":"","value_13":"","value_14":"","value_15":"","value_16":"","value_17":"","value_18":"","value_19":"","value_20":"","view_button_background":"","view_button_text_color":""}}},"block_order":["block-1","block-2","block-3"],"disabled":true,"settings":{"full_width":true,"subheading":"Compare","title":"Highlight key differences at a glance","content":"<p>This section is perfect for showcasing product comparisons side-by-side. Use it to display key features, specifications, and pricing so customers can quickly decide which item fits their needs.<\/p>","button_text":"Learn more","button_url":"","text_position":"start","max_rows":5,"view_all_text":"View all","view_less_text":"View less","view_product":"View","viewing_product":"","show_product_swatch":true,"background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","button_background":"","button_text_color":"","chart_background":"","chart_text_color":"","chart_true_false_color":""}},"section-17":{"type":"timeline","blocks":{"block-1":{"type":"slide","settings":{"navigation_label":"2014","subheading":"The beginning","title":"Our journey starts with a simple idea","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"block-2":{"type":"slide","settings":{"navigation_label":"2017","subheading":"First Launch","title":"Introducing our very first product to the world","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"block-3":{"type":"slide","settings":{"navigation_label":"2018","subheading":"Early growth","title":"Building momentum and expanding the team","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"block-4":{"type":"slide","settings":{"navigation_label":"2019","subheading":"Going global","title":"Reaching customers across continents","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"block-5":{"type":"slide","settings":{"navigation_label":"2020","subheading":"Milestone achieved","title":"Celebrating 100,000 happy customers","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"block-6":{"type":"slide","settings":{"navigation_label":"2021","subheading":"Stronger than ever","title":"Scaling new heights and looking ahead","content":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}}},"block_order":["block-1","block-2","block-3","block-4","block-5","block-6"],"disabled":true,"settings":{"full_width":true,"background":"","background_gradient":"","text_color":""}},"hot_spots_KR9f9a":{"type":"hot-spots","blocks":{"item_VgfEpT":{"type":"item","settings":{"horizontal_position":24,"vertical_position":70,"horizontal_position_mobile":24,"vertical_position_mobile":70,"icon_width":32,"title":"Feature name","content":"<p>Share useful information about your product features.<\/p>"}},"item_RhaXre":{"type":"item","settings":{"horizontal_position":62,"vertical_position":14,"horizontal_position_mobile":62,"vertical_position_mobile":14,"icon_width":32,"title":"Feature name","content":"<p>Share useful information about your product features.<\/p>"}},"item_gVVqgL":{"type":"item","settings":{"horizontal_position":83,"vertical_position":75,"horizontal_position_mobile":83,"vertical_position_mobile":75,"icon_width":32,"title":"Feature name","content":"<p>Share useful information about your product features.<\/p>"}},"item_9ifgyF":{"type":"item","settings":{"horizontal_position":56,"vertical_position":59,"horizontal_position_mobile":60,"vertical_position_mobile":60,"icon_width":32,"title":"Feature name","content":"<p>Share useful information about your product features.<\/p>"}},"item_NKiaJf":{"type":"item","settings":{"horizontal_position":30,"vertical_position":30,"horizontal_position_mobile":30,"vertical_position_mobile":30,"icon_width":32,"title":"Feature name","content":"<p>Share useful information about your product features.<\/p>"}}},"block_order":["item_VgfEpT","item_RhaXre","item_gVVqgL","item_9ifgyF","item_NKiaJf"],"disabled":true,"name":"Hot spots","settings":{"full_width":false,"image":"shopify:\/\/shop_images\/d1b2fb5a-7de6-4be8-bd98-c96366d4.png","mobile_image":"shopify:\/\/shop_images\/pineapple.png","title":"","content":"","button_text":"","button_url":"","desktop_text_position":"place-self-start text-start","image_background":"","image_background_gradient":"","overlay_color":"#000000","overlay_opacity":0,"overlay_text_color":"#ffffff","overlay_button_background":"","overlay_button_text_color":"","hot_spot_dot_background":"#ffffff","hot_spot_dot_text_color":"#000000","hot_spot_content_background":"#ffffff","hot_spot_content_text_color":"#000000","hot_spot_content_opacity":90,"hot_spot_content_blur_radius":3}},"multi_column_v2_wLnDG7":{"type":"multi-column-v2","blocks":{"item_NfFmMj":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 12.23.24 PM.mp4","show_controls":false,"title":"After","heading_tag":"h4","content":"","link_url":"","link_text":"","link_style":"link"}},"item_A6re7M":{"type":"item","settings":{"video":"shopify:\/\/files\/videos\/WhatsApp Video 2025-08-29 at 12.23.23 PM.mp4","show_controls":false,"title":"Before","heading_tag":"h4","content":"","link_url":"","link_text":"","link_style":"link"}}},"block_order":["item_NfFmMj","item_A6re7M"],"disabled":true,"name":"Multi-column V2","settings":{"full_width":true,"stack_on_mobile":false,"per_row_column":4,"gap":"x-large","text_alignment":"center","subheading":"","title":"","content":"","background":"","background_gradient":"","text_color":"","inner_background":""}}},"order":["section-1","scrolling_icon_text_kx6HaA","collection_list_p4JRJT","section-5","collection_list_RAywJr","custom_collection_grid_f9feEK","logo_list_bCWfVP","multi_column_v2_9CDXmU","rich_text_4n7EqP","video_qLCECw","collection_list_yH4qwq","before_after_image_VznPkz","before_after_image_FM7fU7","media_grid_KnfnNH","section-15","section-17","hot_spots_KR9f9a","multi_column_v2_wLnDG7"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section-1": {
+      "type": "slideshow",
+      "blocks": {
+        "block-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/13.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "block-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/14.png",
+            "content_max_width": 640,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "block-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pic2_e4375fcd-08a4-4725-b1d4-06510323f693.jpg",
+            "content_max_width": 640,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "image_X9pEFx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/15.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "shopify://collections/wellness",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "image_em3k7X": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "shopify://collections/devotional-fragrances",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-2",
+        "block-1",
+        "block-3",
+        "image_X9pEFx",
+        "image_em3k7X"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "show_initial_transition": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": true,
+        "cycle_speed": 6,
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": ""
+      }
+    },
+    "scrolling_icon_text_kx6HaA": {
+      "type": "scrolling-icon-text",
+      "blocks": {
+        "block_CprTbr": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/charcoal-free.png",
+            "text": "CHARCOAL FREE"
+          }
+        },
+        "block_fQfWG8": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/perfume.png",
+            "text": "LONG-LASTING FRAGRANCE"
+          }
+        },
+        "block_wpfia8": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/fire.png",
+            "text": "LONG-BURNING INCENSE"
+          }
+        },
+        "block_CCbcGN": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/save-the-world.png",
+            "text": "ECO-FRIENDLY"
+          }
+        },
+        "block_WNtMLJ": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/trophy.png",
+            "text": "AWARD-WINNING"
+          }
+        },
+        "block_mkiUKc": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/memorial.png",
+            "text": "LEGACY SINCE 1961"
+          }
+        }
+      },
+      "block_order": [
+        "block_CprTbr",
+        "block_fQfWG8",
+        "block_wpfia8",
+        "block_CCbcGN",
+        "block_WNtMLJ",
+        "block_mkiUKc"
+      ],
+      "name": "Scrolling icon with text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 9,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#f0a369",
+        "text_gradient": ""
+      }
+    },
+    "collection_list_p4JRJT": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_6gURhQ": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "incense-stick",
+            "image": "shopify://shop_images/Premium_Lifestyle_Shot.png",
+            "subheading": "",
+            "title": "Incense Sticks{{ block.settings.collection.title }}﻿",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_8wndn7": {
+          "type": "collection",
+          "settings": {
+            "collection": "incense-stick",
+            "image": "shopify://shop_images/Premium_Lifestyle_Shot.png",
+            "subheading": "",
+            "title": "Incense Sticks",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_rHiqGJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "dhoop-products",
+            "image": "shopify://shop_images/1_1.png",
+            "subheading": "",
+            "title": "Dhoop Products",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        },
+        "collection_yrk8ML": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "energy-upliftment",
+            "image": "shopify://shop_images/nGSr2DIi.png",
+            "subheading": "",
+            "title": "Meditation",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        },
+        "collection_KLGm6C": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "image": "shopify://shop_images/MG_9954.jpg",
+            "subheading": "",
+            "title": "Best Sellers",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        },
+        "collection_QTAEDQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "gift-box",
+            "image": "shopify://shop_images/box_mock_up3_c5c9c015-872a-4b87-960f-c64c84524e3a.jpg",
+            "subheading": "",
+            "title": "Gift Boxes",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        },
+        "collection_qbjRmU": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "focus-spiritual-balance",
+            "image": "shopify://shop_images/uvKbl5T7.png",
+            "subheading": "",
+            "title": "Focus",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        },
+        "collection_zXmr7z": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "floral-fragrances",
+            "image": "shopify://shop_images/i2WhMZpi.webp",
+            "subheading": "",
+            "title": "Concentration",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5
+          }
+        }
+      },
+      "block_order": [
+        "collection_6gURhQ",
+        "collection_8wndn7",
+        "collection_rHiqGJ",
+        "collection_yrk8ML",
+        "collection_KLGm6C",
+        "collection_QTAEDQ",
+        "collection_qbjRmU",
+        "collection_zXmr7z"
+      ],
+      "custom_css": [
+        ".bleed {justify-content: center;}"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "4",
+        "collections_per_row": 7,
+        "collections_image_shape": "circle",
+        "collections_title_position": "below-img",
+        "collection-text-align": "center",
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#1a1a1a",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "section-5": {
+      "type": "featured-collection",
+      "custom_css": [
+        "@media (max-width: 768px) {.bleed {padding-inline-start: 10px; } .product-list {--product-list-items-per-row: 2; --product-list-carousel-item-width: 74vw; --product-list-grid: 1fr; } product-list.product-list {display: grid; grid-auto-flow: column; grid-auto-columns: 175px; gap: 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; scroll-padding-left: 10px; scrollbar-width: none; }}"
+      ],
+      "settings": {
+        "collection": "herbal-and-traditional",
+        "products": [
+          "panadi-rudraksh-agarbatti-aromatherapy",
+          "100-pure-bhimseni-kapoor",
+          "arabian-night-mystical-night-color-agarbatti",
+          "ashtavinayak-color-agarbatti-incense-sticks",
+          "traditional-ayodhya-ashwamedh-sambrani-incense",
+          "ayodhya-ashwamedh-sambrani",
+          "ayodhya-rose-havan-cup",
+          "chandan-aromatherapy-color-agarbatti-incense-sticks"
+        ],
+        "full_width": false,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 8,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Best sellers",
+        "content": "",
+        "link_url": "shopify://collections/all",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "collection_list_RAywJr": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_Pxfzcb": {
+          "type": "collection",
+          "settings": {
+            "collection": "incense-stick",
+            "image": "shopify://shop_images/kapoor_agarbatti_13a0fcdc-01a4-41d7-a7bc-6df2105c6d73.png",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_TDfAV7": {
+          "type": "collection",
+          "settings": {
+            "collection": "dhoop-cone",
+            "image": "shopify://shop_images/NKwRgP7e.png",
+            "subheading": "",
+            "title": "Dhoop",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_UrMCxq": {
+          "type": "collection",
+          "settings": {
+            "collection": "camphor",
+            "image": "shopify://shop_images/BhimseniKapoorpic4.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_3qj4DR": {
+          "type": "collection",
+          "settings": {
+            "collection": "make-your-saver-pack",
+            "image": "shopify://shop_images/Combo.png",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_Pxfzcb",
+        "collection_TDfAV7",
+        "collection_UrMCxq",
+        "collection_3qj4DR"
+      ],
+      "custom_css": [
+        ".bleed {justify-content: center;}"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "4",
+        "collections_per_row": 5,
+        "collections_image_shape": "original",
+        "collections_title_position": "below-img",
+        "collection-text-align": "center",
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Our Collections",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#1a1a1a",
+        "heading_color": "#1a1a1a",
+        "heading_gradient": ""
+      }
+    },
+    "custom_collection_grid_f9feEK": {
+      "type": "custom-collection-grid",
+      "blocks": {
+        "collection_3REy3t": {
+          "type": "collection",
+          "settings": {
+            "collection": "incense-stick",
+            "custom_image": "shopify://shop_images/kapoor_agarbatti.png"
+          }
+        },
+        "collection_zVXg68": {
+          "type": "collection",
+          "settings": {
+            "collection": "dhoop-batti",
+            "custom_image": "shopify://shop_images/MG_0981.jpg"
+          }
+        },
+        "collection_LHeUej": {
+          "type": "collection",
+          "settings": {
+            "collection": "dhoop-cone",
+            "custom_image": "shopify://shop_images/mogra_dhoop_cone.png"
+          }
+        },
+        "collection_3wGcBq": {
+          "type": "collection",
+          "settings": {
+            "collection": "dhoop-cups",
+            "custom_image": "shopify://shop_images/MG_0971.jpg"
+          }
+        },
+        "collection_zmtirA": {
+          "type": "collection",
+          "settings": {
+            "collection": "camphor",
+            "custom_image": "shopify://shop_images/BhimseniKapoorpic4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "collection_3REy3t",
+        "collection_zVXg68",
+        "collection_LHeUej",
+        "collection_3wGcBq",
+        "collection_zmtirA"
+      ],
+      "disabled": true,
+      "name": "Custom Collection Grid",
+      "settings": {
+        "title": "Our Collections"
+      }
+    },
+    "logo_list_bCWfVP": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_KhY388": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/zodiac.png",
+            "logo_width": 150,
+            "link": "shopify://collections/aromatherapy-pack"
+          }
+        },
+        "logo_JWFE3h": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/sit-in.png",
+            "logo_width": 150,
+            "link": "shopify://collections/ritual-fragrances"
+          }
+        },
+        "logo_K9KLYt": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/cards.png",
+            "logo_width": 150,
+            "link": "shopify://collections/stress-buster-pack"
+          }
+        }
+      },
+      "block_order": [
+        "logo_KhY388",
+        "logo_JWFE3h",
+        "logo_K9KLYt"
+      ],
+      "name": "Logo list",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "title": "",
+        "content": "",
+        "text_alignment": "center",
+        "items_per_row": 5,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "#ffffff",
+        "logo_item_border": ""
+      }
+    },
+    "multi_column_v2_9CDXmU": {
+      "type": "multi-column-v2",
+      "blocks": {
+        "item_LNYnQy": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 6.25.04 PM (1).mp4",
+            "show_controls": false,
+            "title": "Pooja & Rituals",
+            "heading_tag": "h4",
+            "content": "<p>Daily Pooja, Purification & cleansing, Devotional & Temple use.</p>",
+            "link_url": "shopify://collections/pooja-ritual",
+            "link_text": "Shop Now",
+            "link_style": "link"
+          }
+        },
+        "item_MMKYnX": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 6.25.04 PM.mp4",
+            "show_controls": false,
+            "title": "Aromatherapy",
+            "heading_tag": "h4",
+            "content": "<p>Focus & Spiritual Balance, Relaxation & Calm, Energy & Upliftment.</p>",
+            "link_url": "shopify://collections/aromatherapy-pack",
+            "link_text": "Shop Now",
+            "link_style": "link"
+          }
+        },
+        "item_TTJeij": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 6.25.03 PM (3).mp4",
+            "show_controls": false,
+            "title": "Make Your Own Pack",
+            "heading_tag": "h4",
+            "content": "<p>Because every prayer deserves your personal touch.</p>",
+            "link_url": "shopify://collections/make-your-saver-pack",
+            "link_text": "Shop Now",
+            "link_style": "link"
+          }
+        },
+        "item_PQeCqV": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 6.25.03 PM.mp4",
+            "show_controls": false,
+            "title": "Meditation",
+            "heading_tag": "h4",
+            "content": "<p>Peace, Gratitude, Wisdom.</p>",
+            "link_url": "shopify://collections/meditation",
+            "link_text": "Shop Now",
+            "link_style": "link"
+          }
+        },
+        "item_HgWNKQ": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 6.25.03 PM (1).mp4",
+            "show_controls": false,
+            "title": "Wellness",
+            "heading_tag": "h4",
+            "content": "<p>Stress Buster, Better Sleep, Mood Uplifter, Healing.</p>",
+            "link_url": "shopify://collections/wellness",
+            "link_text": "Shop Now",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_LNYnQy",
+        "item_MMKYnX",
+        "item_TTJeij",
+        "item_PQeCqV",
+        "item_HgWNKQ"
+      ],
+      "name": "Multi-column V2",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "per_row_column": 5,
+        "gap": "small",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "inner_background": ""
+      }
+    },
+    "rich_text_4n7EqP": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_cDdxeY": {
+          "type": "subheading",
+          "settings": {
+            "text": "Fragrance of Virtue"
+          }
+        },
+        "heading_7cDRGP": {
+          "type": "heading",
+          "settings": {
+            "text": "About Us",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_rckAyV": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Welcome to<strong> Fragrance of Virtue</strong> , where we specialize in engineering a wide range of incense products, including agarbatti, Dhoop batti, dhoop cone and cups, natural resins, dhuna powder, kapoor, and puja-related items. Our carefully crafted incense is designed for use in puja rituals, meditation, healing, aromatherapy and creating a fragrant environment.</p>"
+          }
+        },
+        "button_BfdfRk": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "sm",
+            "text": "Know More",
+            "url": "shopify://pages/about-us",
+            "background": "#ffb74a",
+            "text_color": "#1a1a1a"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_cDdxeY",
+        "heading_7cDRGP",
+        "richtext_rckAyV",
+        "button_BfdfRk"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "video_qLCECw": {
+      "type": "video",
+      "blocks": {
+        "play_ytUNhR": {
+          "type": "play",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "play_ytUNhR"
+      ],
+      "name": "Video",
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify://files/videos/video-banner.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "collection_list_yH4qwq": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_7jNUf3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/chandancopy.png",
+            "subheading": "",
+            "title": "Pooja & Rituals",
+            "url": "",
+            "heading_tag": "h5",
+            "text_position": "place-self-end-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_riw9p7": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/rose1.png",
+            "subheading": "",
+            "title": "Aroma",
+            "url": "",
+            "heading_tag": "h5",
+            "text_position": "place-self-end-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_rw3Qea": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/WhatsAppImage2025-07-24at4.06.51PM.jpg",
+            "subheading": "",
+            "title": "Wellness",
+            "url": "",
+            "heading_tag": "h5",
+            "text_position": "place-self-end-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_gzn9JC": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/XKohmKt1-200-200.webp",
+            "subheading": "",
+            "title": "Gifts",
+            "url": "",
+            "heading_tag": "h5",
+            "text_position": "place-self-end-center text-center",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_7jNUf3",
+        "collection_riw9p7",
+        "collection_rw3Qea",
+        "collection_gzn9JC"
+      ],
+      "disabled": true,
+      "name": "Collection list",
+      "settings": {
+        "full_width": false,
+        "stack_collections": true,
+        "collections_per_row_mobile": "2",
+        "collections_per_row": 4,
+        "collections_image_shape": "original",
+        "collections_title_position": "below-img",
+        "collection-text-align": "center",
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Category",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#1a1a1a",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "before_after_image_VznPkz": {
+      "type": "before-after-image",
+      "name": "Before/after image",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Why Choose FOV ?",
+        "content": "",
+        "before_image": "shopify://shop_images/WhatsApp_Image_2025-12-04_at_6.37.17_PM.jpg",
+        "after_image": "shopify://shop_images/WhatsApp_Image_2025-12-04_at_6.37.18_PM.jpg",
+        "expand_image": false,
+        "text_position": "center",
+        "before_after_text_position": "bottom",
+        "before_text": "Before",
+        "after_text": "After",
+        "drag_initial_position": 50,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "before_text_color": "#ffffff",
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
+      }
+    },
+    "before_after_image_FM7fU7": {
+      "type": "before-after-image",
+      "disabled": true,
+      "name": "Before/after image",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Why Choose FOV ?",
+        "content": "",
+        "before_image": "shopify://shop_images/After.png",
+        "after_image": "shopify://shop_images/Before.png",
+        "expand_image": false,
+        "text_position": "center",
+        "before_after_text_position": "bottom",
+        "before_text": "After",
+        "after_text": "Before",
+        "drag_initial_position": 50,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "before_text_color": "#ffffff",
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
+      }
+    },
+    "media_grid_KnfnNH": {
+      "type": "media-grid",
+      "blocks": {
+        "video_6NyRw6": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 12.23.23 PM.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "show_video_controls": false,
+            "title": "Before",
+            "heading_tag": "h4",
+            "link_url": "",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 2,
+            "desktop_row_span": 3,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "video_F3cnCx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 12.23.24 PM.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "show_video_controls": false,
+            "title": "After",
+            "heading_tag": "h4",
+            "link_url": "",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 2,
+            "desktop_row_span": 3,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "video_6NyRw6",
+        "video_F3cnCx"
+      ],
+      "disabled": true,
+      "name": "Media grid",
+      "settings": {
+        "full_width": true,
+        "reduce_width": false,
+        "desktop_row_height": 350,
+        "mobile_row_height": 150,
+        "background": "",
+        "background_gradient": ""
+      }
+    },
+    "section-15": {
+      "type": "feature-chart",
+      "blocks": {
+        "block-1": {
+          "type": "headings",
+          "settings": {
+            "heading_1": "Driver",
+            "heading_2": "Weight",
+            "heading_3": "Dimensions",
+            "heading_4": "Battery",
+            "heading_5": "",
+            "heading_6": "",
+            "heading_7": "",
+            "heading_8": "",
+            "heading_9": "",
+            "heading_10": "",
+            "heading_11": "",
+            "heading_12": "",
+            "heading_13": "",
+            "heading_14": "",
+            "heading_15": "",
+            "heading_16": "",
+            "heading_17": "",
+            "heading_18": "",
+            "heading_19": "",
+            "heading_20": ""
+          }
+        },
+        "block-2": {
+          "type": "values",
+          "settings": {
+            "product": "",
+            "value_1": "<p>40mm Beryllium</p>",
+            "value_2": "<p>245g</p>",
+            "value_3": "<p>165mm x 190mm x 66mm</p>",
+            "value_4": "<p>24 hours</p>",
+            "value_5": "",
+            "value_6": "",
+            "value_7": "",
+            "value_8": "",
+            "value_9": "",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        },
+        "block-3": {
+          "type": "values",
+          "settings": {
+            "product": "",
+            "value_1": "<p>40mm Beryllium</p>",
+            "value_2": "<p>205g (On-Ear), 239g (Over-Ear)</p>",
+            "value_3": "<p>190mm x 155mm x 34mm (On-Ear), 200mm x 165mm x 40mm (Over-Ear)</p>",
+            "value_4": "<p>16 hours</p>",
+            "value_5": "",
+            "value_6": "",
+            "value_7": "",
+            "value_8": "",
+            "value_9": "",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "subheading": "Compare",
+        "title": "Highlight key differences at a glance",
+        "content": "<p>This section is perfect for showcasing product comparisons side-by-side. Use it to display key features, specifications, and pricing so customers can quickly decide which item fits their needs.</p>",
+        "button_text": "Learn more",
+        "button_url": "",
+        "text_position": "start",
+        "max_rows": 5,
+        "view_all_text": "View all",
+        "view_less_text": "View less",
+        "view_product": "View",
+        "viewing_product": "",
+        "show_product_swatch": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "chart_background": "",
+        "chart_text_color": "",
+        "chart_true_false_color": ""
+      }
+    },
+    "section-17": {
+      "type": "timeline",
+      "blocks": {
+        "block-1": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2014",
+            "subheading": "The beginning",
+            "title": "Our journey starts with a simple idea",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "block-2": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2017",
+            "subheading": "First Launch",
+            "title": "Introducing our very first product to the world",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "block-3": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2018",
+            "subheading": "Early growth",
+            "title": "Building momentum and expanding the team",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "block-4": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2019",
+            "subheading": "Going global",
+            "title": "Reaching customers across continents",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "block-5": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2020",
+            "subheading": "Milestone achieved",
+            "title": "Celebrating 100,000 happy customers",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "block-6": {
+          "type": "slide",
+          "settings": {
+            "navigation_label": "2021",
+            "subheading": "Stronger than ever",
+            "title": "Scaling new heights and looking ahead",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "hot_spots_KR9f9a": {
+      "type": "hot-spots",
+      "blocks": {
+        "item_VgfEpT": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 24,
+            "vertical_position": 70,
+            "horizontal_position_mobile": 24,
+            "vertical_position_mobile": 70,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        },
+        "item_RhaXre": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 62,
+            "vertical_position": 14,
+            "horizontal_position_mobile": 62,
+            "vertical_position_mobile": 14,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        },
+        "item_gVVqgL": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 83,
+            "vertical_position": 75,
+            "horizontal_position_mobile": 83,
+            "vertical_position_mobile": 75,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        },
+        "item_9ifgyF": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 56,
+            "vertical_position": 59,
+            "horizontal_position_mobile": 60,
+            "vertical_position_mobile": 60,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        },
+        "item_NKiaJf": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 30,
+            "vertical_position": 30,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_VgfEpT",
+        "item_RhaXre",
+        "item_gVVqgL",
+        "item_9ifgyF",
+        "item_NKiaJf"
+      ],
+      "disabled": true,
+      "name": "Hot spots",
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/d1b2fb5a-7de6-4be8-bd98-c96366d4.png",
+        "mobile_image": "shopify://shop_images/pineapple.png",
+        "title": "",
+        "content": "",
+        "button_text": "",
+        "button_url": "",
+        "desktop_text_position": "place-self-start text-start",
+        "image_background": "",
+        "image_background_gradient": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "overlay_text_color": "#ffffff",
+        "overlay_button_background": "",
+        "overlay_button_text_color": "",
+        "hot_spot_dot_background": "#ffffff",
+        "hot_spot_dot_text_color": "#000000",
+        "hot_spot_content_background": "#ffffff",
+        "hot_spot_content_text_color": "#000000",
+        "hot_spot_content_opacity": 90,
+        "hot_spot_content_blur_radius": 3
+      }
+    },
+    "multi_column_v2_wLnDG7": {
+      "type": "multi-column-v2",
+      "blocks": {
+        "item_NfFmMj": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 12.23.24 PM.mp4",
+            "show_controls": false,
+            "title": "After",
+            "heading_tag": "h4",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_A6re7M": {
+          "type": "item",
+          "settings": {
+            "video": "shopify://files/videos/WhatsApp Video 2025-08-29 at 12.23.23 PM.mp4",
+            "show_controls": false,
+            "title": "Before",
+            "heading_tag": "h4",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_NfFmMj",
+        "item_A6re7M"
+      ],
+      "disabled": true,
+      "name": "Multi-column V2",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "per_row_column": 4,
+        "gap": "x-large",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "inner_background": ""
+      }
+    }
+  },
+  "order": [
+    "section-1",
+    "scrolling_icon_text_kx6HaA",
+    "collection_list_p4JRJT",
+    "section-5",
+    "collection_list_RAywJr",
+    "custom_collection_grid_f9feEK",
+    "logo_list_bCWfVP",
+    "multi_column_v2_9CDXmU",
+    "rich_text_4n7EqP",
+    "video_qLCECw",
+    "collection_list_yH4qwq",
+    "before_after_image_VznPkz",
+    "before_after_image_FM7fU7",
+    "media_grid_KnfnNH",
+    "section-15",
+    "section-17",
+    "hot_spots_KR9f9a",
+    "multi_column_v2_wLnDG7"
+  ]
+}
