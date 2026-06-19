@@ -1,1 +1,128 @@
-{"type":"custom.overlay","name":"Overlay group","sections":{"17559449355e6243b9":{"type":"_blocks","settings":{}},"newsletter-popup":{"type":"newsletter-popup","settings":{"apparition_delay":5,"show_only_on_index":true,"show_only_for_visitors":true,"show_only_once":true,"title":"Signup for our newsletter","button_text":"Subscribe","subtext":"Describe what your customers will receive when subscribing to your newsletter."}},"privacy-banner":{"type":"privacy-banner","disabled":true,"settings":{"privacy_bar_title":"Cookie policy","privacy_bar_content":"<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.<\/p>"}},"cart-drawer":{"type":"cart-drawer","settings":{"show_cart_note":false,"show_shipping_text":false,"show_view_cart_button":false,"show_checkout_button":true,"recommendations_title":"Frequently bought together","products":["100-pure-bhimseni-kapoor","7-chakra-healing-aromatherapy-sticks","arabian-night-mystical-night-color-agarbatti","belpatra-incense-stick","dwarka-color-agarbatti-incense-sticks","darshanam-incense-stick-exotic-color-agarbatti","exotic-ayodhya-ashvamedh-havan-cup","ayodhya-sanjeevani","fovpl-ayodhya-tulsimala-ashwagandha-dhoop-stick","floral-blossom-medley"],"product_card_background":"#f2f2f2","product_card_text_color":""}},"search-drawer":{"type":"search-drawer","settings":{"full_width":false,"show_article_category":true,"search_menu":"categories","search_menu_show_title":true}},"social_icon_floating_44tTK4":{"type":"social-icon-floating","name":"Floating Social Icons","settings":{"sticky-positon":"right","bottom_position":16,"icon_width":40,"text_color":"#ffffff","custom_icon_bg_color":"#ff0000","custom_icon_link":"shopify:\/\/collections\/all","fb_bg_color":"#3b5998","twit_bg_color":"#1a1a1a","instagram_gradient":"linear-gradient(45deg, rgba(240, 148, 51, 1), rgba(230, 104, 60, 1) 25%, rgba(220, 39, 67, 1) 50%, rgba(204, 35, 102, 1) 75%, rgba(188, 24, 136, 1) 100%)","th_bg_color":"","pin_bg_color":"","yt_bg_color":"#e20016","tt_bg_color":"","vmo_bg_color":"","lin_bg_color":"#007bb5","sc_bg_color":"","wa_bg_color":"#4caf50","tmb_bg_color":"","fac_bg_color":"","wc_bg_color":"","rdt_bg_color":"","ln_bg_color":"","spt_bg_color":"","btn21_bg_color":""}},"sticky_image_VUxGEG":{"type":"sticky-image","name":"Sticky Image","settings":{"left_position":0,"icon_width":240,"mobile_icon_width":220,"sticky_img":"shopify:\/\/shop_images\/Image_2025-11-28_at_4.06.41_PM.png","show_controls":false,"content_1":".","content_2":"","content_3":"","url":"shopify:\/\/pages\/genie-picks","only_homepage":true,"text_color":"#000000"}}},"order":["17559449355e6243b9","newsletter-popup","privacy-banner","cart-drawer","search-drawer","social_icon_floating_44tTK4","sticky_image_VUxGEG"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay group",
+  "sections": {
+    "17559449355e6243b9": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "apparition_delay": 5,
+        "show_only_on_index": true,
+        "show_only_for_visitors": true,
+        "show_only_once": true,
+        "title": "Signup for our newsletter",
+        "button_text": "Subscribe",
+        "subtext": "Describe what your customers will receive when subscribing to your newsletter."
+      }
+    },
+    "privacy-banner": {
+      "type": "privacy-banner",
+      "disabled": true,
+      "settings": {
+        "privacy_bar_title": "Cookie policy",
+        "privacy_bar_content": "<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.</p>"
+      }
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "show_cart_note": false,
+        "show_shipping_text": false,
+        "show_view_cart_button": false,
+        "show_checkout_button": true,
+        "recommendations_title": "Frequently bought together",
+        "products": [
+          "100-pure-bhimseni-kapoor",
+          "7-chakra-healing-aromatherapy-sticks",
+          "arabian-night-mystical-night-color-agarbatti",
+          "belpatra-incense-stick",
+          "dwarka-color-agarbatti-incense-sticks",
+          "darshanam-incense-stick-exotic-color-agarbatti",
+          "exotic-ayodhya-ashvamedh-havan-cup",
+          "ayodhya-sanjeevani",
+          "fovpl-ayodhya-tulsimala-ashwagandha-dhoop-stick",
+          "floral-blossom-medley"
+        ],
+        "product_card_background": "#f2f2f2",
+        "product_card_text_color": ""
+      }
+    },
+    "search-drawer": {
+      "type": "search-drawer",
+      "settings": {
+        "full_width": false,
+        "show_article_category": true,
+        "search_menu": "categories",
+        "search_menu_show_title": true
+      }
+    },
+    "social_icon_floating_44tTK4": {
+      "type": "social-icon-floating",
+      "name": "Floating Social Icons",
+      "settings": {
+        "sticky-positon": "right",
+        "bottom_position": 16,
+        "icon_width": 45,
+        "text_color": "#ffffff",
+        "custom_icon_bg_color": "#ff0000",
+        "custom_icon_link": "shopify://collections/all",
+        "fb_bg_color": "#3b5998",
+        "twit_bg_color": "#1a1a1a",
+        "instagram_gradient": "linear-gradient(45deg, rgba(240, 148, 51, 1), rgba(230, 104, 60, 1) 25%, rgba(220, 39, 67, 1) 50%, rgba(204, 35, 102, 1) 75%, rgba(188, 24, 136, 1) 100%)",
+        "th_bg_color": "",
+        "pin_bg_color": "",
+        "yt_bg_color": "#e20016",
+        "tt_bg_color": "",
+        "vmo_bg_color": "",
+        "lin_bg_color": "#007bb5",
+        "sc_bg_color": "",
+        "wa_bg_color": "#4caf50",
+        "tmb_bg_color": "",
+        "fac_bg_color": "",
+        "wc_bg_color": "",
+        "rdt_bg_color": "",
+        "ln_bg_color": "",
+        "spt_bg_color": "",
+        "btn21_bg_color": ""
+      }
+    },
+    "sticky_image_VUxGEG": {
+      "type": "sticky-image",
+      "name": "Sticky Image",
+      "settings": {
+        "left_position": 0,
+        "icon_width": 240,
+        "mobile_icon_width": 220,
+        "sticky_img": "shopify://shop_images/Image_2025-11-28_at_4.06.41_PM.png",
+        "show_controls": false,
+        "content_1": ".",
+        "content_2": "",
+        "content_3": "",
+        "url": "shopify://pages/genie-picks",
+        "only_homepage": true,
+        "text_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "17559449355e6243b9",
+    "newsletter-popup",
+    "privacy-banner",
+    "cart-drawer",
+    "search-drawer",
+    "social_icon_floating_44tTK4",
+    "sticky_image_VUxGEG"
+  ]
+}
