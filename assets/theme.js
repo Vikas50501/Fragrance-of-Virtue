@@ -3070,7 +3070,8 @@ var ProductQuickAdd = class extends HTMLElement {
         this.#scopeToReached = entry.isIntersecting;
       }
     });
-    this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
+    const showFromTopOnMobile = window.matchMedia("(max-width: 699px)").matches;
+    this.classList.toggle("is-visible", (showFromTopOnMobile || this.#scopeFromPassed) && !this.#scopeToReached);
   }
 };
 if (!window.customElements.get("product-quick-add")) {

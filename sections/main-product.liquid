@@ -44,6 +44,43 @@
       --product-gallery-media-list-gap: var(--grid-gutter);
     }
   }
+
+  /* Mobile sticky Add-to-cart bar (shown above the fold via quick-add.js) */
+  @media screen and (max-width: 699px) {
+    #shopify-section-{{ section.id }} .product-quick-add {
+      background: rgb(var(--background));
+      border-top: 1px solid rgb(var(--text-color) / 0.08);
+      box-shadow: 0 -1px 12px rgb(var(--text-color) / 0.10);
+      padding: 0.625rem 0.75rem;
+      /* Keep the button clear of the WhatsApp / chat widget anchored bottom-right */
+      padding-inline-end: 4.5rem;
+      padding-bottom: max(0.625rem, env(safe-area-inset-bottom));
+    }
+
+    #shopify-section-{{ section.id }} .product-quick-add__mobile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    #shopify-section-{{ section.id }} .product-quick-add__mobile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.125rem;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    #shopify-section-{{ section.id }} .product-quick-add__mobile-title {
+      font-size: 0.8125rem;
+      line-height: 1.2;
+    }
+
+    #shopify-section-{{ section.id }} .product-quick-add__mobile-button {
+      flex: 0 0 auto;
+    }
+  }
 </style>
 
 {%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
@@ -73,9 +110,17 @@
       <product-quick-add form="{{ product_form_id }}" class="product-quick-add">
         {%- assign button_label = 'product.general.add_to_cart_button' | t -%}
 
-        <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" class="sm:hidden">
-          {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true, stretch: true, size: 'lg' -%}
-        </buy-buttons>
+        {%- comment -%} Mobile sticky bar: title + price on the left, Add to cart on the right. {%- endcomment -%}
+        <div class="product-quick-add__mobile sm:hidden">
+          <div class="product-quick-add__mobile-info">
+            <span class="product-quick-add__mobile-title bold truncate-text">{{ product.title }}</span>
+            {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
+          </div>
+
+          <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" class="product-quick-add__mobile-button">
+            {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true, size: 'lg' -%}
+          </buy-buttons>
+        </div>
 
         {%- assign image = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 
