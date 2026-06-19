@@ -491,7 +491,7 @@
         "collection-text-align": "center",
         "show_progress_bar": false,
         "subheading": "",
-        "title": "Our Collections",
+        "title": "OUR COLLECTIONS",
         "content": "",
         "link_url": "",
         "link_text": "",
@@ -708,7 +708,7 @@
         "heading_7cDRGP": {
           "type": "heading",
           "settings": {
-            "text": "About Us",
+            "text": "ABOUT US",
             "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
@@ -872,7 +872,7 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Why Choose FOV ?",
+        "title": "WHY CHOOSE FOV ?",
         "content": "",
         "before_image": "shopify://shop_images/WhatsApp_Image_2025-12-04_at_6.37.17_PM.jpg",
         "after_image": "shopify://shop_images/WhatsApp_Image_2025-12-04_at_6.37.18_PM.jpg",
