@@ -10226,4 +10226,44 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     bottom: 30% !important;
     transform: rotate(90deg) !important;
 }
+
+/* ============================================================
+   Uniform product-card pricing & alignment
+   (collection, related products, featured collection)
+   ============================================================ */
+
+/* All card prices use the brand red, consistent size & weight, sale or not */
+.product-card .price-list sale-price {
+  color: rgb(226 0 22) !important;
+  font-weight: 700;
+}
+
+/* Compare-at (was-price) consistent muted + strike-through */
+.product-card .price-list compare-at-price {
+  color: rgb(var(--text-color) / 0.5);
+  font-weight: 400;
+}
+
+/* Reserve consistent space for title + caption so the price always
+   lands at the same vertical position regardless of their length */
+.product-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3em; /* 2 lines @ line-height 1.5 */
+}
+
+.product-card__caption {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.4em;
+}
+
+/* Equal card heights so prices and buttons align across the grid */
+.product-list .product-card {
+  height: 100%;
+}
  }
