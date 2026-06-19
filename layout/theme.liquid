@@ -63,6 +63,19 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    {%- comment -%}
+      TEMPORARY: hide the floating WhatsApp chat widget (app-injected, not theme code).
+      The app stays installed — this only hides it visually. Delete this <style> block to restore.
+    {%- endcomment -%}
+    <style>
+      .wa-widget-send-button,
+      .wa-chat-bubble,
+      .wa-chat-box {
+        display: none !important;
+      }
+    </style>
+
      {%- render 'sr-checkout' -%}
      <script>
   function getUserTimezone() {
