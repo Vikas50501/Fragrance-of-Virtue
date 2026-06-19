@@ -74,7 +74,7 @@
       "settings": {
         "sticky-positon": "right",
         "bottom_position": 16,
-        "icon_width": 45,
+        "icon_width": 50,
         "text_color": "#ffffff",
         "custom_icon_bg_color": "#ff0000",
         "custom_icon_link": "shopify://collections/all",
