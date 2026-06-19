@@ -100,6 +100,32 @@
       white-space: nowrap;
     }
   }
+
+  /* CTA colors: Add to cart = white bg / red text (hover: red bg / white text); Buy it now = solid red */
+  #shopify-section-{{ section.id }} buy-buttons .button:not([data-buy-now]):not([disabled]) {
+    --button-background: 255 255 255 !important;
+    --button-text-color: 226 0 22 !important;
+    --button-outline-color: 226 0 22 !important;
+    box-shadow: inset 0 0 0 2px rgb(226 0 22) !important;
+  }
+
+  #shopify-section-{{ section.id }} buy-buttons .button:not([data-buy-now]):not([disabled]):hover,
+  #shopify-section-{{ section.id }} buy-buttons .button:not([data-buy-now]):not([disabled]):focus-visible {
+    --button-background: 226 0 22 !important;
+    --button-text-color: 255 255 255 !important;
+  }
+
+  #shopify-section-{{ section.id }} [data-buy-now] {
+    --button-background: 226 0 22 !important;
+    --button-text-color: 255 255 255 !important;
+    --button-outline-color: 226 0 22 !important;
+  }
+
+  #shopify-section-{{ section.id }} [data-buy-now]:hover,
+  #shopify-section-{{ section.id }} [data-buy-now]:focus-visible {
+    --button-background: 226 0 22 !important;
+    --button-text-color: 255 255 255 !important;
+  }
 </style>
 
 {%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
