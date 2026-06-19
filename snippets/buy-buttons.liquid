@@ -79,6 +79,14 @@ Supported variables
     <buy-buttons class="buy-buttons {% if show_payment_button %}buy-buttons--multiple{% endif %}" template="{{ product.template_suffix | escape }}" form="{{ form_id }}">
       {%- render 'button', content: button_content, type: 'submit', size: button_size, disabled: button_disabled, secondary: show_payment_button, subdued: button_disabled, background: atc_button_background, text_color: atc_button_text_color -%}
 
+      {%- unless button_disabled -%}
+        {%- comment -%} Custom "Buy it now": adds to cart then redirects to checkout (see product-form _onSubmit / data-buy-now). {%- endcomment -%}
+        {%- capture buy_now_style -%}
+          {%- if payment_button_background != blank and payment_button_background != 'rgba(0,0,0,0)' -%}--button-background: {{ payment_button_background.rgb }} / var(--button-background-opacity, 1); --button-outline-color: {{ payment_button_background.rgb }};{%- else -%}--button-background: 26 26 26 / var(--button-background-opacity, 1); --button-outline-color: 26 26 26;{%- endif -%} {%- if payment_button_text_color != blank and payment_button_text_color != 'rgba(0,0,0,0)' -%}--button-text-color: {{ payment_button_text_color.rgb }};{%- else -%}--button-text-color: 255 255 255;{%- endif -%}
+        {%- endcapture -%}
+        <button type="submit" data-buy-now form="{{ form_id }}" class="button{% if button_size != blank and button_size != 'base' %} button--{{ button_size }}{% endif %}" style="{{ buy_now_style | strip_newlines | strip }}">Buy it now</button>
+      {%- endunless -%}
+
       {%- if show_payment_button -%}
         {{- form | payment_button -}}
 

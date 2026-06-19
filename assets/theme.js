@@ -2695,6 +2695,7 @@ var ProductForm = class extends HTMLFormElement {
   }
   async _onSubmit(event) {
     event.preventDefault();
+    const isBuyNow = event.submitter && event.submitter.hasAttribute("data-buy-now");
     if (this.#submitting) {
       return;
     }
@@ -2726,6 +2727,9 @@ var ProductForm = class extends HTMLFormElement {
     this.#submitting = false;
     const responseJson = await response.json();
     if (response.ok) {
+      if (isBuyNow) {
+        return window.location.href = `${Shopify.routes.root}checkout`;
+      }
       if (window.themeVariables.settings.cartType === "page" || window.themeVariables.settings.pageType === "cart") {
         return window.location.href = `${Shopify.routes.root}cart`;
       }
