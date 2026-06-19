@@ -32,27 +32,6 @@
          width: 15px;
      }
     }
-
-    /* Premium SVG icons: consistent size, weight, alignment and spacing */
-    #shopify-section-{{ section.id }} span.scroll_content_wrapper { gap: 0.5em; }
-    #shopify-section-{{ section.id }} .luxe-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: none;
-      line-height: 0;
-      color: {% if section.settings.icon_color != blank %}{{ section.settings.icon_color }}{% elsif section.settings.text_color != blank %}{{ section.settings.text_color }}{% else %}currentColor{% endif %};
-    }
-    #shopify-section-{{ section.id }} .luxe-icon svg {
-      width: 1.15em;
-      height: 1.15em;
-      display: block;
-      overflow: visible;
-    }
-    @media screen and (max-width: 699px) {
-      #shopify-section-{{ section.id }} span.scroll_content_wrapper { gap: 0.5em; }
-      #shopify-section-{{ section.id }} .luxe-icon svg { width: 1.1em; height: 1.1em; }
-    }
   </style>
 
   {%- if section.settings.text_size == 'xsmall' -%}
@@ -62,33 +41,10 @@
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture block_content -%}
       {%- for block in section.blocks -%}
-        {%- liquid
-          assign icon_key = block.settings.icon_type | default: 'auto'
-          if icon_key == 'auto'
-            assign t = block.settings.text | downcase
-            if t contains 'charcoal'
-              assign icon_key = 'leaf'
-            elsif t contains 'eco' or t contains 'sustain'
-              assign icon_key = 'eco'
-            elsif t contains 'fragrance' or t contains 'aroma' or t contains 'scent' or t contains 'perfume'
-              assign icon_key = 'perfume'
-            elsif t contains 'burn' or t contains 'incense' or t contains 'stick' or t contains 'smoke'
-              assign icon_key = 'incense'
-            elsif t contains 'award' or t contains 'winning' or t contains 'excellence'
-              assign icon_key = 'award'
-            elsif t contains 'legacy' or t contains '1961' or t contains 'heritage' or t contains 'since' or t contains 'tradition'
-              assign icon_key = 'legacy'
-            else
-              assign icon_key = 'sparkle'
-            endif
-          endif
-        -%}
         <span class="scroll_content_wrapper">
-            {%- if block.settings.icon_type == 'image' and block.settings.icon != blank -%}
-              <img src="{{ block.settings.icon | image_url: width: 100 }}" loading="lazy" class="scroll_img" width="40" height="40" alt="">
-            {%- elsif icon_key != 'none' -%}
-              {%- render 'luxe-icon', icon: icon_key -%}
-            {%- endif -%}
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | img_url:'icon' }}" loading="lazy" class="scroll_img" width="40px" height="40px">
+            {% endif %}
             <span class="scroll_txt">{{ block.settings.text }}</span>
           </span>
       {%- endfor -%}
@@ -232,12 +188,6 @@
       "type": "color_background",
       "id": "text_gradient",
       "label": "Text gradient"
-    },
-    {
-      "type": "color",
-      "id": "icon_color",
-      "label": "Icon color",
-      "info": "Defaults to the text color."
     }
   ],
   "blocks": [
@@ -246,29 +196,10 @@
       "name": "Block",
       "settings": [
           {
-            "type": "select",
-            "id": "icon_type",
-            "label": "Icon",
-            "info": "Premium built-in icons. Choose 'Auto' to match the text automatically.",
-            "options": [
-              { "value": "auto", "label": "Auto (match text)" },
-              { "value": "leaf", "label": "Charcoal-free (leaf)" },
-              { "value": "eco", "label": "Eco-friendly (sprout)" },
-              { "value": "perfume", "label": "Fragrance (perfume)" },
-              { "value": "incense", "label": "Incense (stick + smoke)" },
-              { "value": "award", "label": "Award (medal)" },
-              { "value": "legacy", "label": "Legacy (shield)" },
-              { "value": "sparkle", "label": "Sparkle" },
-              { "value": "image", "label": "Uploaded image" },
-              { "value": "none", "label": "No icon" }
-            ],
-            "default": "auto"
-          },
-          {
             "type": "image_picker",
             "id": "icon",
-            "label": "Uploaded image",
-            "info": "Used only when Icon is set to 'Uploaded image'. 100 x 100px recommended."
+            "label": "Icon",
+            "info": "100 x 100px recommended"
           },
           {
             "type": "text",
