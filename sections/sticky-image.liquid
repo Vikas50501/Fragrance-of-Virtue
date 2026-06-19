@@ -1,5 +1,6 @@
 {%- comment -%} Rendered mobile width of the genie image; the bubble text below scales from it so the two never drift apart. {%- endcomment -%}
 {%- assign m_img_width = section.settings.mobile_icon_width | divided_by: 1.6 | round -%}
+{%- assign d_img_width = section.settings.icon_width | divided_by: 1.6 | round -%}
 {% style %}
   #shopify-section-{{ section.id }}{
     display: none;
@@ -140,7 +141,7 @@
     opacity: 1;
   }
   .Sticky-img-wrapper .sticky__image{
-    width: {{ section.settings.icon_width }}px;
+    width: {{ d_img_width }}px;
   }
 
   .sticky_content_wrapper {
@@ -151,15 +152,15 @@
   .sticky_text{
     position: absolute;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: {{ d_img_width | times: 0.053 | round }}px;
     /* height: 0.5rem; */
-    line-height: 0.8rem;
+    line-height: 1.05;
     vertical-align: bottom;
     /* overflow: hidden; */
     color: #000000;
-    top: 25px;
-    right: 28px;
-    width: 100px;
+    top: {{ d_img_width | times: 0.104 | round }}px;
+    right: {{ d_img_width | times: 0.117 | round }}px;
+    width: {{ d_img_width | times: 0.417 | round }}px;
   }
   @media(max-width:768px){
     .sticky_text{
