@@ -215,7 +215,7 @@
       bottom: 70px;
     }
       .Sticky-img-wrapper .sticky__image{
-       width: {{ section.settings.mobile_icon_width | divided_by: 1.15 | round }}px !important;
+       width: {{ section.settings.mobile_icon_width | divided_by: 2 | round }}px !important;
       }
   }
 {% endstyle %}
@@ -355,12 +355,12 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         "type": "range",
         "id": "mobile_icon_width",
-        "min": 210,
+        "min": 80,
         "max": 400,
         "unit": "px",
         "step": 10,
         "label": "Mobile Image Size",
-        "default": 210
+        "default": 160
     },
     {
         "type": "image_picker",
