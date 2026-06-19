@@ -145,7 +145,7 @@
         "block_CprTbr": {
           "type": "block",
           "settings": {
-            "icon": "shopify://shop_images/charcoal-free.png",
+            "icon": "shopify://shop_images/charcoal-free-create-icon-for-this.png",
             "text": "CHARCOAL FREE"
           }
         },
