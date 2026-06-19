@@ -1,0 +1,31 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+LUXE ICON
+----------------------------------------------------------------------------------------------------------------------
+Premium, minimalist line-style SVG icons used by the scrolling icon-text bar.
+
+* icon: the icon key (leaf, eco, perfume, incense, award, legacy, sparkle)
+
+All icons share a 24x24 viewBox, 1.5 stroke, round caps/joins and use `currentColor`,
+so they inherit the colour set on the surrounding `.luxe-icon` wrapper and stay
+consistent in size, weight and spacing on both light and dark backgrounds.
+{%- endcomment -%}
+{%- assign key = icon | downcase | strip -%}
+<span class="luxe-icon" aria-hidden="true">
+  {%- case key -%}
+    {%- when 'leaf', 'charcoal' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 9 5 20 5c0 11-6 15-16 15Z"/><path d="M4.5 19.5C8 14 12 11 17 9"/></svg>
+    {%- when 'eco' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7.5"/><path d="M12 13.5C12 9.5 9.2 6.5 4.5 6.5c0 4 2.8 7 7.5 7Z"/><path d="M12 12.5c0-3.4 2.7-6 7-6 0 3.4-2.7 6-7 6Z"/></svg>
+    {%- when 'perfume', 'fragrance' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9.5" width="8" height="10.5" rx="2.5"/><path d="M10 9.5V7h4v2.5"/><rect x="9.5" y="3.8" width="5" height="3.2" rx="1"/><path d="M18.4 8.2c1.2.7 1.2 2.1 0 2.8"/><path d="M20.4 7.2c1.5.9 1.5 2.7 0 3.6"/></svg>
+    {%- when 'incense' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20.5h10"/><path d="M12 20.5V8.6"/><circle cx="12" cy="7.9" r=".7" fill="currentColor" stroke="none"/><path d="M12 7.5c1.5-1 1.5-2.5 0-3.5s-1.5-2.5 0-3.5"/></svg>
+    {%- when 'award' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5l1.6 3.8"/><path d="M15 3.5l-1.6 3.8"/><circle cx="12" cy="14" r="6"/><path d="M12 11l1.05 2.13 2.35.34-1.7 1.66.4 2.34L12 16.6l-2.1 1.1.4-2.34-1.7-1.66 2.35-.34z"/></svg>
+    {%- when 'legacy' -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.4v5.4c0 4.5-3 7.8-7 9.4-4-1.6-7-4.9-7-9.4V5.4z"/><path d="M12 8.4l.85 1.72 1.9.28-1.37 1.34.32 1.9L12 12.9l-1.7.92.32-1.9L9.25 10.4l1.9-.28z"/></svg>
+    {%- else -%}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8z"/></svg>
+  {%- endcase -%}
+</span>
