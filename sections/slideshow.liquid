@@ -1,5 +1,5 @@
-{%- assign hero_desktop_ratio = section.settings.desktop_aspect_ratio | default: '16 / 9' -%}
-{%- assign hero_mobile_ratio = section.settings.mobile_aspect_ratio | default: '5 / 4' -%}
+{%- assign hero_desktop_height = section.settings.desktop_height | default: 90 -%}
+{%- assign hero_mobile_height = section.settings.mobile_height | default: 60 -%}
 {%- assign hero_fit = section.settings.image_fit | default: 'cover' -%}
 
 {%- comment -%}
@@ -25,7 +25,12 @@ CSS
     {%- endif -%}
   }
 
-  {%- comment -%} Fixed, uniform slide size so all slides share dimensions and the layout never shifts on transition. {%- endcomment -%}
+  {%- comment -%} Fixed, uniform slide height so all slides share dimensions and the layout never shifts on transition. {%- endcomment -%}
+  #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
+    --content-over-media-height: {{ hero_mobile_height }}vh;
+  }
+
+  {%- comment -%} Make the actual image/video fill the fixed-height box (crop, no distortion). {%- endcomment -%}
   #shopify-section-{{ section.id }} .slideshow__slide .content-over-media picture > img,
   #shopify-section-{{ section.id }} .slideshow__slide .content-over-media video-media > video {
     width: 100%;
@@ -34,21 +39,11 @@ CSS
     object-position: center;
   }
 
-  {%- if hero_mobile_ratio != 'auto' -%}
+  @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
-      aspect-ratio: {{ hero_mobile_ratio }};
-      --content-over-media-height: 100%;
+      --content-over-media-height: {{ hero_desktop_height }}vh;
     }
-  {%- endif -%}
-
-  {%- if hero_desktop_ratio != 'auto' -%}
-    @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
-        aspect-ratio: {{ hero_desktop_ratio }};
-        --content-over-media-height: 100%;
-      }
-    }
-  {%- endif -%}
+  }
 
   {%- for block in section.blocks -%}
     #block-{{ block.id }} {
@@ -283,36 +278,28 @@ LIQUID
     },
     {
       "type": "header",
-      "content": "Fixed slide size",
-      "info": "Forces every slide to the same aspect ratio so the layout never shifts between slides. Content position and overlay are set per slide below."
+      "content": "Fixed slide height",
+      "info": "Every slide uses the same height so the layout never shifts between slides. Content position and overlay are set per slide below."
     },
     {
-      "type": "select",
-      "id": "desktop_aspect_ratio",
-      "label": "Desktop aspect ratio",
-      "options": [
-        { "value": "16 / 9", "label": "16:9 (widescreen)" },
-        { "value": "21 / 9", "label": "21:9 (cinematic)" },
-        { "value": "3 / 2", "label": "3:2" },
-        { "value": "4 / 3", "label": "4:3" },
-        { "value": "1 / 1", "label": "1:1 (square)" },
-        { "value": "auto", "label": "Use media size setting above" }
-      ],
-      "default": "16 / 9"
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Desktop height",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "default": 90
     },
     {
-      "type": "select",
-      "id": "mobile_aspect_ratio",
-      "label": "Mobile aspect ratio",
-      "options": [
-        { "value": "5 / 4", "label": "5:4" },
-        { "value": "4 / 5", "label": "4:5 (portrait)" },
-        { "value": "1 / 1", "label": "1:1 (square)" },
-        { "value": "4 / 3", "label": "4:3" },
-        { "value": "16 / 9", "label": "16:9" },
-        { "value": "auto", "label": "Use media size setting above" }
-      ],
-      "default": "5 / 4"
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "default": 60
     },
     {
       "type": "select",
