@@ -395,24 +395,24 @@
           "ayodhya-rose-havan-cup",
           "chandan-aromatherapy-color-agarbatti-incense-sticks"
         ],
-        "full_width": false,
+        "full_width": true,
         "stack_products": true,
         "show_progress_bar": false,
         "products_count": 8,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
-        "subheading": "",
+        "subheading": "Most Loved by Our Customers",
         "title": "BEST SELLERS",
         "content": "",
         "link_url": "shopify://collections/all",
         "link_text": "",
-        "background": "",
+        "background": "#faf8f5",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#1a1a1a",
         "heading_color": "",
         "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
+        "product_card_background": "#ffffff",
+        "product_card_text_color": "#1a1a1a"
       }
     },
     "collection_list_RAywJr": {
