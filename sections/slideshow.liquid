@@ -1,5 +1,4 @@
 {%- assign hero_desktop_height = section.settings.desktop_height | default: 90 -%}
-{%- assign hero_mobile_height = section.settings.mobile_height | default: 60 -%}
 {%- assign hero_fit = section.settings.image_fit | default: 'cover' -%}
 
 {%- comment -%}
@@ -25,9 +24,9 @@ CSS
     {%- endif -%}
   }
 
-  {%- comment -%} Fixed slide height so every slide is the same height (no layout shift). Mobile uses base value, desktop overrides. {%- endcomment -%}
+  {%- comment -%} Fixed, uniform slide height (no layout shift). Mobile = 5:4 (80% of full-width slide); desktop overrides below. {%- endcomment -%}
   #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
-    --content-over-media-height: {{ hero_mobile_height }}vh;
+    --content-over-media-height: 80vw;
   }
 
   #shopify-section-{{ section.id }} .slideshow__slide .content-over-media picture > img,
@@ -278,7 +277,7 @@ LIQUID
     {
       "type": "header",
       "content": "Slide height",
-      "info": "Every slide uses the same fixed height (no layout shift between slides)."
+      "info": "Every slide uses the same fixed height (no layout shift). Mobile is fixed at a 5:4 ratio."
     },
     {
       "type": "range",
@@ -289,16 +288,6 @@ LIQUID
       "step": 5,
       "unit": "vh",
       "default": 90
-    },
-    {
-      "type": "range",
-      "id": "mobile_height",
-      "label": "Mobile height",
-      "min": 30,
-      "max": 100,
-      "step": 5,
-      "unit": "vh",
-      "default": 60
     },
     {
       "type": "select",
