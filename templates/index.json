@@ -78,7 +78,8 @@
         "image_X9pEFx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/15.png",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_21_10_AM.png",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_21_39_AM.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
