@@ -1,6 +1,8 @@
 {%- if section.settings.text != blank -%}
   {%- render 'section-spacing-collapsing' -%}
 
+  {%- assign feature_color = section.settings.feature_color | default: '#1a1a1a' -%}
+
   <style>
     #shopify-section-{{ section.id }} span.scrolling-text__text {
         display: flex;
@@ -12,25 +14,68 @@
     }
     #shopify-section-{{ section.id }} span.scroll_content_wrapper {
       display: flex;
-      gap: 20px;
-      padding-right: 100px;
       align-items: center;
+      gap: 0.6em;
+      padding-right: 0;
+      color: {{ feature_color }};
+      transition: transform 0.25s ease;
     }
-    
+
+    /* Subtle divider before each feature for clean separation */
+    #shopify-section-{{ section.id }} span.scroll_content_wrapper::before {
+      content: "";
+      flex: none;
+      width: 1px;
+      height: 1.35em;
+      margin-inline: 2.4em;
+      background: currentColor;
+      opacity: 0.22;
+    }
+
+    #shopify-section-{{ section.id }} .scroll_txt {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #shopify-section-{{ section.id }} .luxe-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      line-height: 0;
+      color: {{ feature_color }};
+      transition: color 0.25s ease;
+    }
+    #shopify-section-{{ section.id }} .luxe-icon svg {
+      width: 1.35em;
+      height: 1.35em;
+      display: block;
+    }
+
+    /* Subtle hover interaction */
+    #shopify-section-{{ section.id }} span.scroll_content_wrapper:hover {
+      transform: translateY(-2px);
+    }
+    #shopify-section-{{ section.id }} span.scroll_content_wrapper:hover .luxe-icon {
+      color: #e20016;
+    }
+
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
-        --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.5rem{% elsif section.settings.text_size == 'small' %}3.75rem{% elsif section.settings.text_size == 'medium' %}5rem{% elsif section.settings.text_size == 'large' %}8.75rem{% else %}12.5rem{% endif %};
+        --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.25rem{% elsif section.settings.text_size == 'small' %}3.75rem{% elsif section.settings.text_size == 'medium' %}5rem{% elsif section.settings.text_size == 'large' %}8.75rem{% else %}12.5rem{% endif %};
       }
     }
     @media screen and (max-width:699px) {
-     #shopify-section-{{ section.id }} span.scroll_content_wrapper {
-      gap: 10px;
-      padding-right: 50px;
-      font-size:16px;
-     }
-     #shopify-section-{{ section.id }} .scroll_content_wrapper img{
-         width: 15px;
-     }
+      #shopify-section-{{ section.id }} span.scroll_content_wrapper::before {
+        margin-inline: 1.5em;
+      }
+      #shopify-section-{{ section.id }} .luxe-icon svg {
+        width: 1.25em;
+        height: 1.25em;
+      }
     }
   </style>
 
@@ -41,12 +86,27 @@
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture block_content -%}
       {%- for block in section.blocks -%}
+        {%- liquid
+          assign t = block.settings.text | downcase
+          assign icon_key = 'sparkle'
+          if t contains 'charcoal'
+            assign icon_key = 'leaf'
+          elsif t contains 'eco' or t contains 'sustain'
+            assign icon_key = 'eco'
+          elsif t contains 'fragrance' or t contains 'aroma' or t contains 'scent' or t contains 'perfume' or t contains 'long-last' or t contains 'long last'
+            assign icon_key = 'perfume'
+          elsif t contains 'burn' or t contains 'incense' or t contains 'stick'
+            assign icon_key = 'incense'
+          elsif t contains 'award' or t contains 'winning' or t contains 'excellence'
+            assign icon_key = 'award'
+          elsif t contains 'legacy' or t contains '1961' or t contains 'heritage' or t contains 'since' or t contains 'tradition'
+            assign icon_key = 'legacy'
+          endif
+        -%}
         <span class="scroll_content_wrapper">
-            {% if block.settings.icon != blank %}
-              <img src="{{ block.settings.icon | img_url:'icon' }}" loading="lazy" class="scroll_img" width="40px" height="40px">
-            {% endif %}
-            <span class="scroll_txt">{{ block.settings.text }}</span>
-          </span>
+          {%- render 'luxe-icon', icon: icon_key -%}
+          <span class="scroll_txt">{{ block.settings.text }}</span>
+        </span>
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -188,6 +248,13 @@
       "type": "color_background",
       "id": "text_gradient",
       "label": "Text gradient"
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "Icon & label color",
+      "info": "Used for the premium feature icons and uppercase labels. Defaults to dark charcoal.",
+      "default": "#1a1a1a"
     }
   ],
   "blocks": [

@@ -23,9 +23,17 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
 
     <link rel="canonical" href="{{ canonical_url }}">
 
-    {%- if settings.favicon -%}
-      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
-      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- if settings.favicon != blank -%}
+      {%- comment -%} Crisp, standards-compliant favicons in all common sizes (center-cropped to square). {%- endcomment -%}
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon | image_url: width: 16, height: 16, crop: 'center' }}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | image_url: width: 32, height: 32, crop: 'center' }}">
+      <link rel="icon" type="image/png" sizes="48x48" href="{{ settings.favicon | image_url: width: 48, height: 48, crop: 'center' }}">
+      <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | image_url: width: 192, height: 192, crop: 'center' }}">
+      <link rel="icon" type="image/png" sizes="512x512" href="{{ settings.favicon | image_url: width: 512, height: 512, crop: 'center' }}">
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32, crop: 'center' }}">
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | image_url: width: 180, height: 180, crop: 'center' }}">
+      <meta name="apple-mobile-web-app-title" content="{{ shop.name | escape }}">
+      <meta name="theme-color" content="#e20016">
     {%- endif -%}
 
     {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
