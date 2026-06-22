@@ -53,7 +53,6 @@
     }
 
     .premium-fc-item {
-      /* Calculates width based on user setting (1, 2, or 4 per row) */
       flex: 0 0 calc((100% / {{ section.settings.products_per_row_mobile }}) - (16px * ({{ section.settings.products_per_row_mobile }} - 1) / {{ section.settings.products_per_row_mobile }}));
       scroll-snap-align: start;
     }
@@ -175,7 +174,7 @@
   }
 
   .premium-fc-btn:hover {
-    background-color: #a30e16; /* Darker red */
+    background-color: #a30e16;
   }
 
   .premium-fc-btn:disabled {
@@ -186,7 +185,8 @@
   /* View All Button */
   .premium-fc-view-all {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
+    display: block;
   }
 
   .premium-fc-view-all-btn {
@@ -217,7 +217,7 @@
   <div class="premium-fc-grid">
     {% assign collection = section.settings.collection %}
     
-    {% if collection != blank %}
+    {% if collection != blank and collection.products_count > 0 %}
       {% for product in collection.products limit: 8 %}
         <div class="premium-fc-item">
           <div class="premium-fc-card">
@@ -262,7 +262,6 @@
         </div>
       {% endfor %}
     {% else %}
-      <!-- Placeholder blocks if no collection is assigned -->
       {% for i in (1..8) %}
         <div class="premium-fc-item">
           <div class="premium-fc-card">
@@ -280,9 +279,9 @@
     {% endif %}
   </div>
 
-  {% if section.settings.show_view_all and collection != blank %}
+  {% if section.settings.show_view_all %}
     <div class="premium-fc-view-all">
-      <a href="{{ collection.url }}" class="premium-fc-view-all-btn">
+      <a href="{{ section.settings.view_all_link | default: collection.url | default: '#' }}" class="premium-fc-view-all-btn">
         {{ section.settings.view_all_text }}
       </a>
     </div>
@@ -328,6 +327,12 @@
       "default": "View All Collection"
     },
     {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "Button Link (Optional)",
+      "info": "Leaves blank to automatically link to the assigned collection above."
+    },
+    {
       "type": "header",
       "content": "Layout Settings"
     },
@@ -345,7 +350,6 @@
       "type": "select",
       "id": "products_per_row_mobile",
       "label": "Products per row (Mobile Carousel)",
-      "info": "2 is recommended for legibility. 4 will make items very small.",
       "options": [
         { "value": "1", "label": "1" },
         { "value": "2", "label": "2" },
