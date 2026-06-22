@@ -1,231 +1,290 @@
-{%- render 'section-spacing-collapsing' -%}
-
 <style>
-  {%- assign section_background = section.settings.background | default: settings.background -%}
-  {%- assign card_background = section.settings.product_card_background | default: settings.product_card_background -%}
-  {%- assign card_blends = false -%}
-
-  {%- unless section_background != 'rgba(0,0,0,0)' and card_background != 'rgba(0,0,0,0)' and section_background != card_background -%}
-    {%- assign card_blends = true -%}
-  {%- endunless -%}
-
-  #shopify-section-{{ section.id }} .product-list {
-    --product-list-gap: {% if section.settings.stack_products and section.settings.products_per_row_mobile == '2' %}{% if card_blends %}var(--product-list-row-gap){% endif %} var(--spacing-2){% else %}var(--product-list-row-gap) var(--product-list-column-gap){% endif %};
-    --product-list-items-per-row: {{ section.settings.products_per_row_mobile | times: 1 }};
-    --product-list-carousel-item-width: 74vw;
-    --product-list-grid: {% if section.settings.stack_products %}auto / repeat(var(--product-list-items-per-row), minmax(0, 1fr)){% else %}auto / auto-flow var(--product-list-carousel-item-width){% endif %};
+  .premium-purpose-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  @media screen and (min-width: 700px) {
-    #shopify-section-{{ section.id }} .product-list {
-      --product-list-gap: var(--product-list-row-gap) var(--product-list-column-gap);
-      --product-list-items-per-row: 2;
-      --product-list-carousel-item-width: 36vw;
+  .premium-purpose-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .premium-purpose-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .premium-purpose-header h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: {{ section.settings.text_color }};
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .premium-purpose-header p {
+    font-size: 1rem;
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.7 }};
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Desktop Grid vs Mobile Swipe */
+  .premium-purpose-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px; /* Space for scrollbar */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .premium-purpose-grid::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+
+  .premium-purpose-card {
+    flex: 0 0 85%; /* Shows a peek of the next card on mobile */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    group;
+  }
+
+  @media screen and (min-width: 768px) {
+    .premium-purpose-grid {
+      display: grid;
+      grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+      overflow-x: visible;
+      padding-bottom: 0;
+    }
+    .premium-purpose-card {
+      flex: auto;
     }
   }
 
-  @media screen and (min-width: 1000px) {
-    #shopify-section-{{ section.id }} .product-list {
-      --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
-      --product-list-carousel-item-width: calc(var(--container-inner-width) / {{ section.settings.products_per_row_desktop }} - (var(--product-list-column-gap) / {{ section.settings.products_per_row_desktop }} * {{ section.settings.products_per_row_desktop | minus: 1 }}));
-    }
+  .premium-purpose-image {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 2 / 3; /* Premium tall portrait ratio */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
   }
-  #shopify-section-featured-collection.section-header{
-    justify-items: center;
-    display: grid
 
+  .premium-purpose-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .premium-purpose-card:hover .premium-purpose-image img {
+    transform: scale(1.06);
+  }
+
+  .premium-purpose-content {
+    text-align: center;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .premium-purpose-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 8px 0;
+  }
+
+  .premium-purpose-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.8 }};
+    margin: 0 0 16px 0;
+    flex-grow: 1;
+  }
+
+  .premium-purpose-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: {{ section.settings.accent_color }};
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    padding-bottom: 4px;
+  }
+
+  .premium-purpose-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: {{ section.settings.accent_color }};
+    transform: scaleX(0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .premium-purpose-card:hover .premium-purpose-link::after {
+    transform: scaleX(1);
   }
 </style>
 
-<div {% render 'section-properties' %}>
-  <div class="section-stack">
-    {%- assign link_url = section.settings.link_url | default: section.settings.collection.url -%}
-    {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, heading_color: section.settings.heading_color, heading_gradient: section.settings.heading_gradient, content: section.settings.content, link_text: section.settings.link_text, link_url: link_url -%}
+<div class="premium-purpose-{{ section.id }}">
+  <div class="premium-purpose-container">
+    
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="premium-purpose-header">
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p>{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
 
-    <div class="{% if section.settings.show_progress_bar %}scrollable-with-controls{% else %}floating-controls-container{% endif %}">
-      {%- assign scroll_area_id = 'scroll-area-' | append: section.id -%}
-
-      <scroll-carousel selector="product-card" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.settings.products_count > section.settings.products_per_row_desktop %}is-scrollable{% endif %}">
-        <reveal-items selector=".product-list > *">
-          <product-list class="product-list">
-            {%- assign products = section.settings.products | default: section.settings.collection.products -%}
-
-            {%- for product in products limit: section.settings.products_count -%}
-              {%- render 'product-card', product: product, stacked: section.settings.stack_products, position: forloop.index, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color, show_badges: true -%}
-            {%- else -%}
-              {%- for i in (1..section.settings.products_count) -%}
-                {%- capture placeholder_image -%}product-{% cycle '1', '2', '3', '4', '5', '6' %}{%- endcapture -%}
-                {%- render 'product-card-placeholder', stacked: section.settings.stack_products, placeholder_image: placeholder_image, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color, text_alignment: settings.product_info_alignment -%}
-              {%- endfor -%}
-            {%- endfor -%}
-          </product-list>
-        </reveal-items>
-      </scroll-carousel>
-
-      {%- if section.settings.stack_products == false -%}
-        {%- if section.settings.show_progress_bar -%}
-          {%- assign default_progress = section.settings.products_per_row_desktop | times: 1.0 | divided_by: section.settings.products_count -%}
-          {%- render 'scrollbar', observes: scroll_area_id, default_progress: default_progress, show_buttons: true -%}
-        {%- else -%}
-          <button is="prev-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}" disabled>
-            <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
-            <span class="animated-arrow animated-arrow--reverse"></span>
-          </button>
-
-          <button is="next-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}">
-            <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
-            <span class="animated-arrow"></span>
-          </button>
-        {%- endif -%}
-      {%- endif -%}
+    <div class="premium-purpose-grid">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.link_url }}" class="premium-purpose-card" {{ block.shopify_attributes }}>
+          <div class="premium-purpose-image">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+            {% else %}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          
+          <div class="premium-purpose-content">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+            <span class="premium-purpose-link">{{ block.settings.link_text }}</span>
+          </div>
+        </a>
+      {% endfor %}
     </div>
+
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Featured collection",
-  "class": "shopify-section--featured-collection",
-  "tag": "section",
-  "disabled_on": {
-    "templates": ["password"],
-    "groups": ["header", "custom.overlay"]
-  },
+  "name": "Premium Purpose Cards",
   "settings": [
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
-      "type": "product_list",
-      "id": "products",
-      "label": "Products",
-      "info": "Replaces collection when selected."
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "Full width",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "stack_products",
-      "label": "Stack products",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_progress_bar",
-      "label": "Show carousel progress bar",
-      "default": false,
-      "visible_if": "{{ section.settings.stack_products == false }}"
-    },
-    {
-      "type": "range",
-      "id": "products_count",
-      "min": 2,
-      "max": 50,
-      "label": "Products to show",
-      "default": 6
-    },
-    {
-      "type": "select",
-      "id": "products_per_row_mobile",
-      "label": "Products per row (mobile)",
-      "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        }
-      ],
-      "default": "2"
-    },
-    {
-      "type": "range",
-      "id": "products_per_row_desktop",
-      "min": 2,
-      "max": 5,
-      "label": "Products per row (desktop)",
-      "default": 3
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading"
-    },
     {
       "type": "text",
       "id": "title",
-      "label": "Heading",
-      "default": "Featured collection"
+      "label": "Section Heading",
+      "default": "Shop by Purpose"
     },
     {
-      "type": "richtext",
-      "id": "content",
-      "label": "Content"
-    },
-    {
-      "type": "url",
-      "id": "link_url",
-      "label": "Link URL",
-      "info": "Default to collection URL."
-    },
-    {
-      "type": "text",
-      "id": "link_text",
-      "label": "Link text",
-      "default": "View all"
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subheading",
+      "default": "Discover the perfect fragrance for every moment."
     },
     {
       "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
+      "content": "Colors"
     },
     {
       "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text"
+      "label": "Text Color",
+      "default": "#111111"
     },
     {
       "type": "color",
-      "id": "heading_color",
-      "label": "Heading color"
+      "id": "accent_color",
+      "label": "Accent Color (Links & Lines)",
+      "default": "#d1121c"
     },
     {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
+      "type": "header",
+      "content": "Spacing"
     },
     {
-      "type": "color",
-      "id": "product_card_background",
-      "label": "Product card background"
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
     },
     {
-      "type": "color",
-      "id": "product_card_text_color",
-      "label": "Product card text"
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category Card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image",
+          "info": "Use tall, high-quality images (e.g., 800x1200px)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pooja & Rituals"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Daily Pooja, Purification & cleansing, Devotional & Temple use."
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Featured collection"
+      "name": "Premium Purpose Cards",
+      "blocks": [
+        { "type": "category", "settings": { "title": "Pooja & Rituals" } },
+        { "type": "category", "settings": { "title": "Aromatherapy" } },
+        { "type": "category", "settings": { "title": "Make Your Own Pack" } },
+        { "type": "category", "settings": { "title": "Meditation" } },
+        { "type": "category", "settings": { "title": "Wellness" } }
+      ]
     }
   ]
 }
