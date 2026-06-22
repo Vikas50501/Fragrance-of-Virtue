@@ -15,7 +15,7 @@
         "block-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/13.png",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_25_20_AM.png",
             "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_29_14_AM.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
@@ -38,6 +38,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_17_56_AM.png",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_18_17_AM.png",
             "content_max_width": 640,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -58,7 +59,8 @@
         "block-3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/pic2_e4375fcd-08a4-4725-b1d4-06510323f693.jpg",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_19_17_AM.png",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_19_57_AM.png",
             "content_max_width": 640,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -101,7 +103,8 @@
         "image_em3k7X": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/9.png",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_22_43_AM.png",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_27_45_AM.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -133,9 +136,6 @@
         "allow_transparent_header": false,
         "show_initial_transition": true,
         "image_size": "auto",
-        "desktop_height": 90,
-        "mobile_height": 60,
-        "image_fit": "cover",
         "controls_type": "dots",
         "transition_type": "fade_with_text",
         "autoplay": true,
