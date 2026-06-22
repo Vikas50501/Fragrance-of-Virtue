@@ -57,7 +57,7 @@ PREMIUM COLLECTION LIST — CSS
   }
 
   #shopify-section-{{ section.id }} .pcl-subheading {
-    font-size: 11px;
+    font-size: 32px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: {{ section.settings.accent_color }};
@@ -291,7 +291,10 @@ PREMIUM COLLECTION LIST — CSS
   }
 
   /* ── Responsive — mobile ── */
-  @media screen and (max-width: 699px) {
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .pcl-subheading {
+      font-size: 28px;
+    }
     #shopify-section-{{ section.id }} .pcl-wrapper {
       padding: 48px 0;
     }
