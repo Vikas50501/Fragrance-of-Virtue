@@ -57,33 +57,42 @@ PREMIUM COLLECTION LIST — CSS
   }
 
   #shopify-section-{{ section.id }} .pcl-subheading {
+    font-family: var(--heading-font-family);
     font-size: 32px;
-    letter-spacing: 3px;
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: {{ section.settings.accent_color }};
-    margin: 0 0 10px;
-    font-weight: 600;
+    margin: 0 0 12px;
+    line-height: 1.2;
   }
 
   #shopify-section-{{ section.id }} .pcl-heading {
-    font-size: clamp(24px, 4vw, 38px);
-    font-weight: 700;
+    font-family: var(--heading-font-family);
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    letter-spacing: -0.02em;
     margin: 0 0 16px;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
   #shopify-section-{{ section.id }} .pcl-divider {
     width: 60px;
     height: 2px;
     background: {{ section.settings.accent_color }};
-    margin: 0 auto 16px;
+    margin: 0 auto 18px;
     border: none;
   }
 
   #shopify-section-{{ section.id }} .pcl-description {
+    font-family: var(--text-font-family);
+    font-size: var(--text-base, 16px);
+    font-weight: var(--text-font-weight);
+    font-style: var(--text-font-style);
     max-width: 560px;
     margin: 0 auto;
-    font-size: 15px;
     line-height: 1.7;
     opacity: 0.65;
   }
@@ -181,19 +190,23 @@ PREMIUM COLLECTION LIST — CSS
 
   /* ── Title ── */
   #shopify-section-{{ section.id }} .pcl-title {
+    font-family: var(--heading-font-family);
     font-size: 15px;
-    font-weight: 600;
-    margin: 0 0 4px;
-    letter-spacing: 0.3px;
-    line-height: 1.35;
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    margin: 0 0 5px;
+    letter-spacing: 0;
+    line-height: 1.3;
   }
 
   /* ── Product count ── */
   #shopify-section-{{ section.id }} .pcl-count {
+    font-family: var(--text-font-family);
     font-size: 12px;
+    font-weight: var(--text-font-weight);
     opacity: 0.5;
     margin: 0 0 14px;
-    font-weight: 400;
+    line-height: 1.4;
   }
 
   /* ── CTA ── */
@@ -201,10 +214,11 @@ PREMIUM COLLECTION LIST — CSS
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    font-family: var(--text-font-family);
     font-size: 11px;
     font-weight: 600;
     color: {{ section.settings.accent_color }};
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     margin-top: auto;
     padding-top: 4px;
@@ -257,11 +271,13 @@ PREMIUM COLLECTION LIST — CSS
     border: 2px solid {{ section.settings.accent_color }};
     color: {{ section.settings.accent_color }};
     text-decoration: none;
+    font-family: var(--text-font-family);
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     border-radius: 50px;
+    line-height: 1;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
 
@@ -287,6 +303,9 @@ PREMIUM COLLECTION LIST — CSS
     }
     #shopify-section-{{ section.id }} .pcl-header {
       margin-bottom: 36px;
+    }
+    #shopify-section-{{ section.id }} .pcl-subheading {
+      font-size: 28px;
     }
   }
 
@@ -318,13 +337,14 @@ PREMIUM COLLECTION LIST — CSS
     }
     #shopify-section-{{ section.id }} .pcl-title {
       font-size: 13px;
+      line-height: 1.25;
     }
     #shopify-section-{{ section.id }} .pcl-count {
       font-size: 11px;
       margin-bottom: 10px;
     }
     #shopify-section-{{ section.id }} .pcl-cta {
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: 0.8px;
     }
     #shopify-section-{{ section.id }} .pcl-footer {
@@ -332,6 +352,7 @@ PREMIUM COLLECTION LIST — CSS
     }
     #shopify-section-{{ section.id }} .pcl-view-all {
       font-size: 11px;
+      letter-spacing: 1px;
       padding: 10px 24px;
     }
   }
