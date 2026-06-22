@@ -213,7 +213,7 @@
       }
     },
     "collection_list_p4JRJT": {
-      "type": "collection-list",
+      "type": "premium-collection-list",
       "blocks": {
         "collection_6gURhQ": {
           "type": "collection",
@@ -353,22 +353,22 @@
       "custom_css": [
         ".bleed {justify-content: center;}"
       ],
-      "name": "Collection list",
+      "name": "Premium Collection List",
       "settings": {
         "full_width": true,
-        "stack_collections": false,
-        "collections_per_row_mobile": "4",
-        "collections_per_row": 7,
-        "collections_image_shape": "circle",
-        "collections_title_position": "below-img",
-        "collection-text-align": "center",
-        "show_progress_bar": false,
-        "subheading": "",
-        "title": "",
+        "collections_per_row": 4,
+        "collections_per_row_mobile": "2",
+        "card_style": "elevated",
+        "show_product_count": true,
+        "show_cta": true,
+        "cta_text": "Shop Now",
+        "subheading": "Curated For You",
+        "title": "Explore Our Collections",
         "content": "",
         "link_url": "",
         "link_text": "",
-        "background": "#ffffff",
+        "accent_color": "#c41e3a",
+        "background": "#faf8f5",
         "background_gradient": "",
         "text_color": "#1a1a1a",
         "heading_color": "",
