@@ -1,7 +1,3 @@
-{%- assign hero_desktop_height = section.settings.desktop_height | default: 90 -%}
-{%- assign hero_mobile_height = section.settings.mobile_height | default: 60 -%}
-{%- assign hero_fit = section.settings.image_fit | default: 'cover' -%}
-
 {%- comment -%}
 ------------------------------------------------------------------------------------------------------------------------
 CSS
@@ -23,26 +19,6 @@ CSS
     {%- if section.settings.allow_transparent_header -%}
       margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));
     {%- endif -%}
-  }
-
-  {%- comment -%} Fixed, uniform slide height so all slides share dimensions and the layout never shifts on transition. {%- endcomment -%}
-  #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
-    --content-over-media-height: {{ hero_mobile_height }}vh;
-  }
-
-  {%- comment -%} Make the actual image/video fill the fixed-height box (crop, no distortion). {%- endcomment -%}
-  #shopify-section-{{ section.id }} .slideshow__slide .content-over-media picture > img,
-  #shopify-section-{{ section.id }} .slideshow__slide .content-over-media video-media > video {
-    width: 100%;
-    height: 100%;
-    object-fit: {{ hero_fit }};
-    object-position: center;
-  }
-
-  @media screen and (min-width: 700px) {
-    #shopify-section-{{ section.id }} .slideshow__slide .content-over-media {
-      --content-over-media-height: {{ hero_desktop_height }}vh;
-    }
   }
 
   {%- for block in section.blocks -%}
@@ -275,41 +251,6 @@ LIQUID
       ],
       "info": "Choose \"Original media ratio\" to not cut media. [Learn more](https://help.shopify.com/en/manual/online-store/images/theme-images#best-practices-for-slideshows-and-full-width-images)",
       "default": "auto"
-    },
-    {
-      "type": "header",
-      "content": "Fixed slide height",
-      "info": "Every slide uses the same height so the layout never shifts between slides. Content position and overlay are set per slide below."
-    },
-    {
-      "type": "range",
-      "id": "desktop_height",
-      "label": "Desktop height",
-      "min": 40,
-      "max": 100,
-      "step": 5,
-      "unit": "vh",
-      "default": 90
-    },
-    {
-      "type": "range",
-      "id": "mobile_height",
-      "label": "Mobile height",
-      "min": 30,
-      "max": 100,
-      "step": 5,
-      "unit": "vh",
-      "default": 60
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "label": "Image fit",
-      "options": [
-        { "value": "cover", "label": "Cover (fill & crop)" },
-        { "value": "contain", "label": "Contain (show full image)" }
-      ],
-      "default": "cover"
     },
     {
       "type": "select",
