@@ -370,7 +370,7 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "accent_color": "#c41e3a",
+        "accent_color": "#FF0000",
         "background": "#faf8f5",
         "background_gradient": "",
         "text_color": "#1a1a1a",
@@ -380,9 +380,7 @@
     },
     "section-5": {
       "type": "featured-collection",
-      "custom_css": [
-        "@media (max-width: 768px) {.bleed {padding-inline-start: 10px; } .product-list {--product-list-items-per-row: 2; --product-list-carousel-item-width: 74vw; --product-list-grid: 1fr; } product-list.product-list {display: grid; grid-auto-flow: column; grid-auto-columns: 175px; gap: 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; scroll-padding-left: 10px; scrollbar-width: none; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "collection": "herbal-and-traditional",
         "products": [
@@ -395,24 +393,24 @@
           "ayodhya-rose-havan-cup",
           "chandan-aromatherapy-color-agarbatti-incense-sticks"
         ],
-        "full_width": true,
+        "full_width": false,
         "stack_products": true,
         "show_progress_bar": false,
         "products_count": 8,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
-        "subheading": "Most Loved by Our Customers",
+        "subheading": "",
         "title": "BEST SELLERS",
         "content": "",
         "link_url": "shopify://collections/all",
         "link_text": "",
-        "background": "#faf8f5",
+        "background": "",
         "background_gradient": "",
-        "text_color": "#1a1a1a",
-        "heading_color": "",
+        "text_color": "",
+        "heading_color": "#FF0000",
         "heading_gradient": "",
-        "product_card_background": "#ffffff",
-        "product_card_text_color": "#1a1a1a"
+        "product_card_background": "",
+        "product_card_text_color": ""
       }
     },
     "collection_list_RAywJr": {
