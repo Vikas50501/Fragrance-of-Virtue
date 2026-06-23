@@ -15,6 +15,70 @@ CSS
 
     --before-after-initial-drag-position: {{ section.settings.drag_initial_position }}%;
   }
+
+  /* Heading standardization + ornament */
+  #shopify-section-{{ section.id }} .prose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .prose h2,
+  #shopify-section-{{ section.id }} .prose .h2 {
+    font-family: var(--heading-font-family);
+    font-size: 32px;
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .prose h2,
+    #shopify-section-{{ section.id }} .prose .h2 {
+      font-size: 20px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .section-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 14px;
+    order: -2;
+  }
+
+  #shopify-section-{{ section.id }} .section-ornament span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #e20016;
+    transform: rotate(45deg);
+    opacity: 0.75;
+  }
+
+  #shopify-section-{{ section.id }} .section-ornament span:nth-child(2) {
+    width: 7px;
+    height: 7px;
+    opacity: 1;
+  }
+
+  #shopify-section-{{ section.id }} .prose .subheading {
+    order: -1;
+  }
+
+  #shopify-section-{{ section.id }} .prose::after {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 2.5px;
+    background: #e20016;
+    border-radius: 2px;
+    margin-top: 14px;
+    flex-shrink: 0;
+  }
 </style>
 
 {%- comment -%}
@@ -26,6 +90,12 @@ LIQUID
 <div {% render 'section-properties' %}>
   <div class="section-stack {% if text_position != 'center' %}section-stack--horizontal{% else %}section-stack--center{% endif %} {% if text_position == 'end' %}section-stack--reverse{% endif %}">
     {%- capture content -%}
+      {%- if section.settings.title != blank -%}
+        <div class="section-ornament" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      {%- endif -%}
+
       {%- if section.settings.subheading != blank -%}
         <p class="subheading">{{ section.settings.subheading | escape }}</p>
       {%- endif -%}
