@@ -25,35 +25,45 @@
 {%- if show_image -%}
   <style>
     /* ── Banner height ── */
-    {%- if section.settings.banner_height == 'small' -%}
+    {%- assign cb_desktop_image = section.settings.image | default: collection.image -%}
+    {%- assign cb_mobile_image = section.settings.mobile_image | default: cb_desktop_image -%}
+
+    {%- if section.settings.banner_height == 'small' or section.settings.banner_height == 'medium' or section.settings.banner_height == 'large' -%}
+      {%- if section.settings.banner_height == 'small' -%}
+        {%- assign cb_height = 'clamp(200px, 30vw, 340px)' -%}
+      {%- elsif section.settings.banner_height == 'large' -%}
+        {%- assign cb_height = 'clamp(360px, 46vw, 580px)' -%}
+      {%- else -%}
+        {%- assign cb_height = 'clamp(280px, 38vw, 460px)' -%}
+      {%- endif -%}
+
       #shopify-section-{{ section.id }} .collection-banner {
-        height: clamp(200px, 30vw, 340px) !important;
+        height: {{ cb_height }} !important;
         min-height: unset !important;
       }
-    {%- elsif section.settings.banner_height == 'medium' -%}
-      #shopify-section-{{ section.id }} .collection-banner {
-        height: clamp(280px, 38vw, 460px) !important;
-        min-height: unset !important;
-      }
-    {%- elsif section.settings.banner_height == 'large' -%}
-      #shopify-section-{{ section.id }} .collection-banner {
-        height: clamp(360px, 46vw, 580px) !important;
-        min-height: unset !important;
+      @media screen and (max-width: 699px) {
+        #shopify-section-{{ section.id }} .collection-banner {
+          height: clamp(200px, 55vw, 300px) !important;
+          min-height: unset !important;
+        }
       }
     {%- else -%}
+      /* Fit to the uploaded image ratio — whole image shows, fully filled, no crop */
       #shopify-section-{{ section.id }} .collection-banner {
-        height: clamp(280px, 38vw, 460px) !important;
+        height: auto !important;
         min-height: unset !important;
+        {%- if cb_mobile_image != blank and cb_mobile_image.aspect_ratio -%}
+          aspect-ratio: {{ cb_mobile_image.aspect_ratio }} !important;
+        {%- endif -%}
+      }
+      @media screen and (min-width: 700px) {
+        #shopify-section-{{ section.id }} .collection-banner {
+          {%- if cb_desktop_image != blank and cb_desktop_image.aspect_ratio -%}
+            aspect-ratio: {{ cb_desktop_image.aspect_ratio }} !important;
+          {%- endif -%}
+        }
       }
     {%- endif -%}
-
-    /* Mobile height */
-    @media screen and (max-width: 699px) {
-      #shopify-section-{{ section.id }} .collection-banner {
-        height: clamp(200px, 55vw, 300px) !important;
-        min-height: unset !important;
-      }
-    }
 
     /* ── Section spacing ── */
     #shopify-section-{{ section.id }} {
@@ -239,6 +249,10 @@
       "label": "Banner height",
       "options": [
         {
+          "value": "fit",
+          "label": "Fit image (full image, no crop)"
+        },
+        {
           "value": "small",
           "label": "Small (200–340px)"
         },
@@ -251,8 +265,8 @@
           "label": "Large (360–580px)"
         }
       ],
-      "default": "medium",
-      "info": "Controls the banner height across screen sizes. Mobile always shows a compact version."
+      "default": "fit",
+      "info": "\"Fit image\" matches the banner to your uploaded image ratio so the whole image is visible. Small/Medium/Large use a fixed height and may crop the image."
     },
     {
       "type": "checkbox",
