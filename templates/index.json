@@ -504,7 +504,7 @@
         "background": "#ffffff",
         "background_gradient": "",
         "text_color": "#1a1a1a",
-        "heading_color": "#1a1a1a",
+        "heading_color": "#FF0000",
         "heading_gradient": ""
       }
     },
@@ -716,7 +716,7 @@
           "settings": {
             "text": "ABOUT US",
             "heading_tag": "h2",
-            "text_color": "",
+            "text_color": "#FF0000",
             "gradient": ""
           }
         },
@@ -890,7 +890,7 @@
         "drag_initial_position": 50,
         "background": "",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#FF0000",
         "before_text_color": "#ffffff",
         "after_text_color": "#ffffff",
         "drag_cursor_background": "#ffffff",
