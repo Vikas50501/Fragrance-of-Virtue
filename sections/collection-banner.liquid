@@ -83,17 +83,18 @@
       }
     {%- endunless -%}
 
-    /* ── Overlay: override the theme's ::before directly ── */
+    /* ── Overlay: fully driven by the Overlay settings (color + opacity) ── */
+    {%- assign cb_overlay = section.settings.overlay_opacity | divided_by: 100.0 -%}
     #shopify-section-{{ section.id }} .collection-banner::before {
       {%- if section.settings.gradient_overlay -%}
       background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.35) 45%,
-        rgba({{ section.settings.overlay_color.rgb }}, {{ section.settings.overlay_opacity | divided_by: 100.0 }}) 100%
+        rgba({{ section.settings.overlay_color.rgb }}, {{ cb_overlay }}) 0%,
+        rgba({{ section.settings.overlay_color.rgb }}, {{ cb_overlay | times: 0.45 }}) 55%,
+        rgba({{ section.settings.overlay_color.rgb }}, 0) 100%
       ) !important;
       {%- else -%}
-      background: rgba({{ section.settings.overlay_color.rgb }}, {{ section.settings.overlay_opacity | divided_by: 100.0 }}) !important;
+      background: rgba({{ section.settings.overlay_color.rgb }}, {{ cb_overlay }}) !important;
       {%- endif -%}
       opacity: 1 !important;
     }
@@ -320,16 +321,17 @@
       "id": "overlay_opacity",
       "label": "Overlay opacity",
       "min": 0,
-      "max": 80,
+      "max": 100,
       "step": 5,
       "unit": "%",
-      "default": 30
+      "default": 30,
+      "info": "Set to 0% for no overlay. Uses the Overlay color above."
     },
     {
       "type": "checkbox",
       "id": "gradient_overlay",
       "label": "Add gradient overlay",
-      "info": "Dark gradient from bottom to top for better text readability.",
+      "info": "Fades the Overlay color from the bottom (strongest) to transparent at the top — better text readability without darkening the whole image.",
       "default": true
     },
     {
