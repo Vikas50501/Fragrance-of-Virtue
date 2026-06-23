@@ -45,8 +45,9 @@
       "type": "collection-banner",
       "settings": {
         "full_width": false,
-        "enable_parallax": true,
+        "enable_parallax": false,
         "allow_transparent_header": false,
+        "image_size": "auto",
         "image": "shopify://shop_images/ChatGPT_Image_Jun_23_2026_12_59_53_PM.png",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_11_06_39_AM.png",
         "show_collection_image": true,
