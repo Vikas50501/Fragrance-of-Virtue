@@ -1,1 +1,159 @@
-{"sections":{"175560824188f6018a":{"type":"_blocks","blocks":{"ai_gen_block_46854d7_XYtew9":{"type":"ai_gen_block_46854d7","settings":{"home_text":"Home","separator":"\/","search_text":"Search","cart_text":"Cart","account_text":"Account","login_text":"Login","register_text":"Register","not_found_text":"Page not found","background_color":"#ffffff","link_color":"#666666","link_hover_color":"#000000","current_color":"#000000","separator_color":"#999999","font_size":14,"spacing":8,"padding_top":16,"padding_bottom":16},"blocks":{}}},"block_order":["ai_gen_block_46854d7_XYtew9"],"settings":{}},"banner":{"type":"collection-banner","settings":{"full_width":false,"allow_transparent_header":false,"enable_parallax":false,"show_collection_title":true,"show_collection_description":true,"show_collection_image":true,"collection_title_size":"h0","image_size":"auto","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","featured_product":"","featured_product_heading":"Featured product","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":30}},"main":{"type":"main-collection","disabled":true,"settings":{"products_per_page":24,"products_per_row_mobile":"2","products_per_row_desktop":5,"filter_layout":"drawer","show_sort_by":true,"show_filters":true,"show_filter_group_name":false,"show_filter_values_count":true,"open_first_filter_group":false}},"collection_tabs_cxkTLB":{"type":"collection-tabs","blocks":{"collection_LXckmD":{"type":"collection","settings":{"title":"Aromatherapy","icon":"picto-gift","custom_icon":"shopify:\/\/shop_images\/aromatherapy.png","icon_width":48,"collection":"aromatherapy-pack","products":[]}},"collection_aDcYaB":{"type":"collection","settings":{"title":"Meditation","icon":"none","custom_icon":"shopify:\/\/shop_images\/meditation.png","icon_width":48,"collection":"meditation","products":[]}},"collection_rJjYfk":{"type":"collection","settings":{"title":"Pooja & Ritual","icon":"none","custom_icon":"shopify:\/\/shop_images\/pooja.png","icon_width":48,"collection":"pooja-ritual","products":[]}},"collection_m4CyEj":{"type":"collection","settings":{"title":"Wellness","icon":"none","custom_icon":"shopify:\/\/shop_images\/wellness.png","icon_width":48,"collection":"wellness","products":[]}}},"block_order":["collection_LXckmD","collection_aDcYaB","collection_rJjYfk","collection_m4CyEj"],"name":"Collection Tabs","settings":{"full_width":true,"content_size":"fill","subheading":"","title":"","text_alignment":"left","first_tab_open":false,"stack_products":true,"show_progress_bar":false,"products_count":50,"products_per_row_mobile":"2","products_per_row_desktop":4,"background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":""}}},"order":["175560824188f6018a","banner","main","collection_tabs_cxkTLB"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "175560824188f6018a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_46854d7_XYtew9": {
+          "type": "ai_gen_block_46854d7",
+          "settings": {
+            "home_text": "Home",
+            "separator": "/",
+            "search_text": "Search",
+            "cart_text": "Cart",
+            "account_text": "Account",
+            "login_text": "Login",
+            "register_text": "Register",
+            "not_found_text": "Page not found",
+            "background_color": "#ffffff",
+            "link_color": "#666666",
+            "link_hover_color": "#000000",
+            "current_color": "#000000",
+            "separator_color": "#999999",
+            "font_size": 14,
+            "spacing": 8,
+            "padding_top": 16,
+            "padding_bottom": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_46854d7_XYtew9"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "collection-banner",
+      "settings": {
+        "full_width": false,
+        "enable_parallax": false,
+        "allow_transparent_header": false,
+        "show_collection_image": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "show_collection_title": true,
+        "collection_title_size": "h0",
+        "show_collection_description": true,
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "featured_product": "",
+        "featured_product_heading": "Featured product"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 24,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 5,
+        "filter_layout": "drawer",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false
+      }
+    },
+    "collection_tabs_cxkTLB": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_LXckmD": {
+          "type": "collection",
+          "settings": {
+            "title": "Aromatherapy",
+            "icon": "picto-gift",
+            "custom_icon": "shopify://shop_images/aromatherapy.png",
+            "icon_width": 48,
+            "collection": "aromatherapy-pack",
+            "products": []
+          }
+        },
+        "collection_aDcYaB": {
+          "type": "collection",
+          "settings": {
+            "title": "Meditation",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/meditation.png",
+            "icon_width": 48,
+            "collection": "meditation",
+            "products": []
+          }
+        },
+        "collection_rJjYfk": {
+          "type": "collection",
+          "settings": {
+            "title": "Pooja & Ritual",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/pooja.png",
+            "icon_width": 48,
+            "collection": "pooja-ritual",
+            "products": []
+          }
+        },
+        "collection_m4CyEj": {
+          "type": "collection",
+          "settings": {
+            "title": "Wellness",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/wellness.png",
+            "icon_width": 48,
+            "collection": "wellness",
+            "products": []
+          }
+        }
+      },
+      "block_order": [
+        "collection_LXckmD",
+        "collection_aDcYaB",
+        "collection_rJjYfk",
+        "collection_m4CyEj"
+      ],
+      "name": "Collection Tabs",
+      "settings": {
+        "full_width": true,
+        "content_size": "fill",
+        "subheading": "",
+        "title": "",
+        "text_alignment": "left",
+        "first_tab_open": false,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 50,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    }
+  },
+  "order": [
+    "175560824188f6018a",
+    "banner",
+    "main",
+    "collection_tabs_cxkTLB"
+  ]
+}
