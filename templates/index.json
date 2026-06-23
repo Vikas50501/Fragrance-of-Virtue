@@ -486,7 +486,8 @@
         "collection_3qj4DR"
       ],
       "custom_css": [
-        ".bleed {justify-content: center;}"
+        ".bleed {justify-content: center;}",
+        ".section-blends.section-full.text-custom {padding-top: 55px;}"
       ],
       "name": "Collection list",
       "settings": {
