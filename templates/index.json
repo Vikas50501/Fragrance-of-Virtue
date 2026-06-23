@@ -380,7 +380,9 @@
     },
     "section-5": {
       "type": "featured-collection",
-      "custom_css": [],
+      "custom_css": [
+        ".section-blends.section-full {padding-top: 55px;}"
+      ],
       "settings": {
         "collection": "herbal-and-traditional",
         "products": [
