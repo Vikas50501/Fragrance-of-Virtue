@@ -70,12 +70,18 @@ PREMIUM COLLECTION LIST — CSS
 
   #shopify-section-{{ section.id }} .pcl-heading {
     font-family: var(--heading-font-family);
-    font-size: clamp(26px, 3.5vw, 40px);
+    font-size: 32px;
     font-weight: var(--heading-font-weight);
     font-style: var(--heading-font-style);
     letter-spacing: -0.02em;
     margin: 0 0 16px;
     line-height: 1.15;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .pcl-heading {
+      font-size: 28px;
+    }
   }
 
   #shopify-section-{{ section.id }} .pcl-divider {
