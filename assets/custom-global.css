@@ -1,0 +1,25 @@
+/* ================================================================
+   FRAGRANCE OF VIRTUE — GLOBAL HEADING DESIGN SYSTEM
+   Reference: "EXPLORE OUR COLLECTIONS" (pcl-subheading style)
+   Desktop: 32px  |  Mobile (≤767px): 20px
+   ================================================================ */
+
+/* All section header h2 headings — desktop & tablet */
+.section-header h2,
+.section-header .h2 {
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .section-header h2,
+  .section-header .h2 {
+    font-size: 20px;
+  }
+}
