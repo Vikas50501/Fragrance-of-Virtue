@@ -23,6 +23,12 @@ Supported variables
   <section-header class="section-header {% if text_alignment != blank %}justify-{{ text_alignment | escape }} justify-items-{{ text_alignment | escape }} text-{{ text_alignment | escape }}{% endif %}">
     {%- if subheading != blank or heading != blank or content != blank -%}
       <div class="prose">
+        {%- if heading != blank -%}
+          <div class="section-ornament" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        {%- endif -%}
+
         {%- if subheading != blank -%}
           <p class="subheading">{{- subheading | escape -}}</p>
         {%- endif -%}

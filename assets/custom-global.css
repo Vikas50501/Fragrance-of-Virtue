@@ -23,3 +23,57 @@
     font-size: 20px;
   }
 }
+
+/* ================================================================
+   SECTION HEADER ORNAMENT + UNDERLINE SYSTEM
+   Three diamond dots above heading, red underline below
+   ================================================================ */
+
+/* Flex column so we can control order of ornament, subheading, h2, underline */
+.section-header .prose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Three-dot diamond ornament */
+.section-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  order: -2;
+}
+
+.section-ornament span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #e20016;
+  transform: rotate(45deg);
+  opacity: 0.75;
+}
+
+.section-ornament span:nth-child(2) {
+  width: 7px;
+  height: 7px;
+  opacity: 1;
+}
+
+/* Subheading sits between ornament and heading */
+.section-header .prose .subheading {
+  order: -1;
+}
+
+/* Red underline after heading */
+.section-header .prose::after {
+  content: '';
+  display: block;
+  width: 52px;
+  height: 2.5px;
+  background: #e20016;
+  border-radius: 2px;
+  margin-top: 14px;
+  flex-shrink: 0;
+}
