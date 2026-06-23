@@ -146,75 +146,6 @@
         "background_gradient": ""
       }
     },
-    "scrolling_icon_text_kx6HaA": {
-      "type": "scrolling-icon-text",
-      "blocks": {
-        "block_CprTbr": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/charcoal-free-create-icon-for-this.png",
-            "text": "CHARCOAL FREE"
-          }
-        },
-        "block_fQfWG8": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/long-lasting-fragrance-make-icon-this-as-per-the-section-make-in-black-and-white.png",
-            "text": "LONG-LASTING FRAGRANCE"
-          }
-        },
-        "block_wpfia8": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/long-burning-incense-create-a-icon-with-this-sectence-professionally-in-black-and-white-red.png",
-            "text": "LONG-BURNING INCENSE"
-          }
-        },
-        "block_CCbcGN": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/save-the-world.png",
-            "text": "ECO-FRIENDLY"
-          }
-        },
-        "block_WNtMLJ": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/award-winning-create-icon-for-this-sentence-in-black-and-white.png",
-            "text": "AWARD-WINNING"
-          }
-        },
-        "block_mkiUKc": {
-          "type": "block",
-          "settings": {
-            "icon": "shopify://shop_images/memorial.png",
-            "text": "LEGACY SINCE 1961"
-          }
-        }
-      },
-      "block_order": [
-        "block_CprTbr",
-        "block_fQfWG8",
-        "block_wpfia8",
-        "block_CCbcGN",
-        "block_WNtMLJ",
-        "block_mkiUKc"
-      ],
-      "name": "Scrolling icon with text",
-      "settings": {
-        "full_width": true,
-        "text": "Promotion text",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 9,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "#ff0000",
-        "text_gradient": "",
-        "feature_color": "#1a1a1a"
-      }
-    },
     "collection_list_p4JRJT": {
       "type": "premium-collection-list",
       "blocks": {
@@ -370,12 +301,81 @@
         "content": "",
         "link_url": "",
         "link_text": "",
-        "accent_color": "#FF0000",
+        "accent_color": "#ff0000",
         "background": "#faf8f5",
         "background_gradient": "",
         "text_color": "#1a1a1a",
         "heading_color": "",
         "heading_gradient": ""
+      }
+    },
+    "scrolling_icon_text_kx6HaA": {
+      "type": "scrolling-icon-text",
+      "blocks": {
+        "block_CprTbr": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/charcoal-free-create-icon-for-this.png",
+            "text": "CHARCOAL FREE"
+          }
+        },
+        "block_fQfWG8": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/long-lasting-fragrance-make-icon-this-as-per-the-section-make-in-black-and-white.png",
+            "text": "LONG-LASTING FRAGRANCE"
+          }
+        },
+        "block_wpfia8": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/long-burning-incense-create-a-icon-with-this-sectence-professionally-in-black-and-white-red.png",
+            "text": "LONG-BURNING INCENSE"
+          }
+        },
+        "block_CCbcGN": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/save-the-world.png",
+            "text": "ECO-FRIENDLY"
+          }
+        },
+        "block_WNtMLJ": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/award-winning-create-icon-for-this-sentence-in-black-and-white.png",
+            "text": "AWARD-WINNING"
+          }
+        },
+        "block_mkiUKc": {
+          "type": "block",
+          "settings": {
+            "icon": "shopify://shop_images/memorial.png",
+            "text": "LEGACY SINCE 1961"
+          }
+        }
+      },
+      "block_order": [
+        "block_CprTbr",
+        "block_fQfWG8",
+        "block_wpfia8",
+        "block_CCbcGN",
+        "block_WNtMLJ",
+        "block_mkiUKc"
+      ],
+      "name": "Scrolling icon with text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 9,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#ff0000",
+        "text_gradient": "",
+        "feature_color": "#1a1a1a"
       }
     },
     "section-5": {
@@ -407,7 +407,7 @@
         "background": "",
         "background_gradient": "",
         "text_color": "",
-        "heading_color": "#FF0000",
+        "heading_color": "#ff0000",
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": ""
@@ -1332,8 +1332,8 @@
   },
   "order": [
     "section-1",
-    "scrolling_icon_text_kx6HaA",
     "collection_list_p4JRJT",
+    "scrolling_icon_text_kx6HaA",
     "section-5",
     "collection_list_RAywJr",
     "custom_collection_grid_f9feEK",
