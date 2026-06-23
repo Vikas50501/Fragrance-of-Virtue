@@ -63,9 +63,8 @@
       object-position: center;
     }
 
-    /* ── Overlay ── */
+    /* ── Section spacing ── */
     #shopify-section-{{ section.id }} {
-      --content-over-media-overlay: {{ section.settings.overlay_color.rgb }} / {{ section.settings.overlay_opacity | divided_by: 100.0 }};
       {%- if section.settings.full_width -%}
         --section-outer-spacing-block: 0;
       {%- else -%}
@@ -82,26 +81,20 @@
       }
     {%- endunless -%}
 
-    /* ── Gradient overlay (bottom-to-top) ── */
-    {%- if section.settings.gradient_overlay -%}
-      #shopify-section-{{ section.id }} .collection-banner::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.72) 0%,
-          rgba(0, 0, 0, 0.32) 45%,
-          rgba(0, 0, 0, 0.04) 100%
-        );
-        z-index: 1;
-        pointer-events: none;
-      }
-      #shopify-section-{{ section.id }} .collection-banner > * {
-        position: relative;
-        z-index: 2;
-      }
-    {%- endif -%}
+    /* ── Overlay: override the theme's ::before directly ── */
+    #shopify-section-{{ section.id }} .collection-banner::before {
+      {%- if section.settings.gradient_overlay -%}
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba({{ section.settings.overlay_color.rgb }}, {{ section.settings.overlay_opacity | divided_by: 100.0 }}) 100%
+      ) !important;
+      {%- else -%}
+      background: rgba({{ section.settings.overlay_color.rgb }}, {{ section.settings.overlay_opacity | divided_by: 100.0 }}) !important;
+      {%- endif -%}
+      opacity: 1 !important;
+    }
 
     /* ── Content text styles ── */
     #shopify-section-{{ section.id }} .cb-title {
@@ -162,24 +155,6 @@
         display: none;
       }
     }
-
-    /* ── Red accent underline below title ── */
-    {%- if section.settings.show_title_underline -%}
-      #shopify-section-{{ section.id }} .v-stack {
-        display: flex;
-        flex-direction: column;
-        align-items: {% if section.settings.mobile_text_position contains 'text-center' %}center{% elsif section.settings.mobile_text_position contains 'text-end' %}flex-end{% else %}flex-start{% endif %};
-      }
-      #shopify-section-{{ section.id }} .cb-title::after {
-        content: '';
-        display: block;
-        width: 48px;
-        height: 3px;
-        background: #e20016;
-        border-radius: 2px;
-        margin-top: 12px;
-      }
-    {%- endif -%}
 
     /* ── Remove excess top/bottom margin ── */
     #shopify-section-{{ section.id }} .section {
@@ -396,12 +371,6 @@
       "id": "show_collection_description",
       "label": "Show collection description",
       "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_title_underline",
-      "label": "Show red underline below title",
-      "default": true
     },
     {
       "type": "checkbox",
