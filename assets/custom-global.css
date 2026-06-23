@@ -1,0 +1,123 @@
+/* ================================================================
+   FRAGRANCE OF VIRTUE — GLOBAL DESIGN SYSTEM
+   Unified section spacing · heading standards · visual language
+   ================================================================
+   Load order: after theme.css, so :root overrides win.
+   Scoped section styles (featured-collection, premium-collection-list)
+   use ID+class specificity and are NOT affected by these global rules.
+   ================================================================ */
+
+
+/* ────────────────────────────────────────────────────────────────
+   1. SECTION SPACING
+   Theme default (xsmall) = 24px. Raised to 80 / 64 / 48px.
+   Only affects sections without their own --section-spacing-block.
+   ──────────────────────────────────────────────────────────────── */
+
+/* Desktop ≥ 1000px */
+:root {
+  --section-outer-spacing-block: 5rem;           /* 80px */
+  --section-inner-max-spacing-block: 5rem;       /* 80px */
+  --section-stack-spacing-block: var(--spacing-12); /* 48px header → content gap */
+}
+
+/* Tablet 700–999px */
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  :root {
+    --section-outer-spacing-block: 4rem;         /* 64px */
+    --section-inner-max-spacing-block: 4rem;
+    --section-stack-spacing-block: var(--spacing-10); /* 40px */
+  }
+}
+
+/* Mobile < 700px */
+@media screen and (max-width: 699px) {
+  :root {
+    --section-outer-spacing-block: 3rem;         /* 48px */
+    --section-inner-max-spacing-block: 3rem;
+    --section-stack-spacing-block: var(--spacing-8); /* 32px */
+  }
+}
+
+
+/* ────────────────────────────────────────────────────────────────
+   2. SECTION HEADING — unified h2 across all section headers
+   Uses theme CSS variables so it respects the Shopify font picker.
+   ──────────────────────────────────────────────────────────────── */
+
+.section-header h2,
+.section-header .h2 {
+  font-family: var(--heading-font-family);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: var(--heading-letter-spacing);
+  line-height: 1.15;
+  margin-bottom: 0;
+}
+
+/* Tablet */
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .section-header h2,
+  .section-header .h2 {
+    font-size: clamp(26px, 4.5vw, 38px);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 699px) {
+  .section-header h2,
+  .section-header .h2 {
+    font-size: clamp(24px, 7vw, 30px);
+    line-height: 1.2;
+  }
+}
+
+
+/* ────────────────────────────────────────────────────────────────
+   3. SECTION SUBHEADING — small uppercase label above heading
+   ──────────────────────────────────────────────────────────────── */
+
+.section-header .subheading {
+  font-family: var(--text-font-family);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+
+/* ────────────────────────────────────────────────────────────────
+   4. SECTION ACCENT LINE — brand-red bar beneath every heading
+   Rendered via ::after on .prose so it always sits below the h2.
+   margin-inline: auto centres it regardless of .prose width.
+   ──────────────────────────────────────────────────────────────── */
+
+.section-header .prose::after {
+  content: '';
+  display: block;
+  width: 52px;
+  height: 2.5px;
+  background: #e20016;
+  border-radius: 2px;
+  margin-top: 16px;
+  margin-inline: auto;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   5. SECTION HEADER PROSE — ensure subheading always appears above
+   h2 regardless of DOM order by using flex column
+   ──────────────────────────────────────────────────────────────── */
+
+.section-header .prose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header .prose .subheading {
+  order: -1;
+}
