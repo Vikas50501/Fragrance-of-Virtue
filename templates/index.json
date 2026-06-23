@@ -877,6 +877,9 @@
     },
     "before_after_image_VznPkz": {
       "type": "before-after-image",
+      "custom_css": [
+        ".section-blends.section-full.text-custom {padding-top: 55px;}"
+      ],
       "name": "Before/after image",
       "settings": {
         "full_width": true,
